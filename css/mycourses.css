@@ -1,0 +1,62 @@
+.mycourses__container{
+    padding-top: 7rem;
+    text-align: left;
+}
+.mycourses__container h3,
+.mycourses__container h4{
+    color: var(--Orange-color);
+}
+
+.trials-left-text{
+    margin-block: 0.625rem 1.5rem;
+}
+
+.my_Courses{
+    max-width: 287px;
+    margin-bottom: 1.5rem;
+
+}
+.my_course{
+    width: 100%;
+    padding: 0.8125em 1.5em;
+    border: 1px solid var(--Grey-color);
+    margin-bottom: 0.75rem;
+    border-radius: var(--border-radius);
+    color: var(--Brown-color);
+}
+
+.add-more-courses_btn{
+    width: 100%;
+    border-radius: var(--border-radius);
+    background: var(--Orange-color);
+    border: none;
+    outline: none;
+    padding: 1em 0;
+    color: var(--white-color);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@media (max-width: 450px) {
+    .my_Courses,
+    .empty-course_section{
+        max-width: 100%;
+    }
+}
+
+.courses_section{
+    display: none;
+}
+.empty-course_section{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    max-width: 342px;
+    text-align: center;
+}
+
+lottie-player{
+    align-self: center;
+    justify-self: center;
+    z-index: -1;
+}

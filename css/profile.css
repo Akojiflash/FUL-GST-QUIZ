@@ -1,0 +1,143 @@
+.profile-main_content {
+    text-align: left;
+}
+
+.incorrect-password{
+    display: flex;
+    margin-top: 1rem;
+    justify-content: start;
+    gap: 1rem;
+    background: #F27A6D;
+    max-width: 368.97px;
+    border-radius: var(--border-radius);
+    padding: 15px 60px 15px 30px;
+    position: absolute;
+    top: 6rem;
+}
+
+.incorrect-password p{
+    color: var(--white-color);
+}
+
+.profile-main_content h1 {
+    margin-bottom: 1.5rem;
+}
+
+form {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.input_container,
+.input_container-wrapper {
+    border-radius: var(--border-radius);
+    width: 300px;
+}
+
+.input_container {
+    box-shadow: var(--box-shadow);
+    padding: 1em 2em;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input_container > div {
+    width: 100%;
+}
+
+.input_container-wrapper {
+    flex-direction: column;
+}
+
+.input_profile-image {
+    width: 70px;
+    margin-block: 1rem;
+}
+
+input {
+    display: block;
+    padding: .75em 1.5em;
+    margin-block: .8rem;
+    border: 1px solid var(--Grey-color);
+    border-radius: 10px;
+    outline: none;
+    width: 100%;
+    color: var(--Brown-color);
+}
+
+.input-changes_btn_container,
+.input-changes_btn {
+    width: 100%;
+}
+
+.input-changes_btn {
+    color: var(--white-color);
+    display: block;
+    margin-top: .5rem;
+    padding-block: .8em;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    outline: none;
+    border: none;
+}
+.password-input{
+    position: relative;
+}
+.show-hide-password{
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 1.2rem;
+    height: .9rem;
+    background: url(../icons/eye-svgrepo-com.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    outline: none;
+    border: none;
+}
+
+.show-hide-password[data-toggle = 'true']{
+    background: url(../icons/eye-off-svgrepo-com.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.eye-off{
+    display: none;
+}
+
+.Password{
+    padding-right: 3rem;
+}
+.discard_changes-btn{
+    background: var(--Grey-color);
+}
+.save_changes-btn{
+    background: var(--Orange-color);
+}
+
+@media (max-width: 600px) {
+    .profile-main_content {
+        text-align: center;
+    }
+
+    form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .input_container,
+    .input_container-wrapper{
+        border-radius: var(--border-radius);
+        width: 80%;
+    }
+
+    .input_container2{
+        width: 100%;
+        margin-bottom: 4rem;
+    }
+}

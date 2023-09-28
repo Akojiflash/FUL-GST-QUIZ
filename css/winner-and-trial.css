@@ -1,0 +1,69 @@
+.winner-loser__container{
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.row2{
+    display: flex;
+    align-items: center;
+    gap: .5em;
+    padding: 11px 1.5em;
+    margin-top: 10px;
+    border-radius: var(--border-radius);
+    background: var(--Grey-color);
+    color: var(--white-color);
+}
+.row2 p,
+.row2 h3{
+    color: var(--white-color);
+}
+
+.test-score{
+    background: transparent;
+    color: var(--Brown-color);
+    font-weight: bold;
+    border: 1px solid var(--Grey-color);
+}
+
+.total-time{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5em;
+}
+
+.total-score{
+    background: #FCD339;
+}
+
+
+.animation_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.losser-animation{
+    display: none;
+}
+
+button.row2{
+    outline: none;
+    border: none;
+    padding: 12px 1.5em;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .winner-loser__container{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.2rem;
+    }
+}

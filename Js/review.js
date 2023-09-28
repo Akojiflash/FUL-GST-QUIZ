@@ -1,0 +1,277 @@
+const fullQuestion = document.querySelector(".question_wrapper");
+let answer = document.querySelector(".options"); // Assuming "answer" is an array of elements with the class "option"
+let sqlData = "";
+let prevsqlData = "";
+let ClickMoreOption = true;
+let backBtn = document.querySelector('#back');
+let frwdBtn = document.querySelector('#forward');
+let course_code = document.querySelector(".selected_course");
+let currenQuestionNumber = document.querySelector(".current-question_number");
+let displayedScore = document.querySelector(".Points span")
+const numberOfQuestions = 30;
+let presentCount = 0;
+
+let currentCount = 0;
+
+
+//keeps track of number of answered questions;
+
+// Create a URLSearchParams object from the current URL
+const urlParams = new URLSearchParams(window.location.search);
+
+// Get the value of the "course" parameter
+const course = urlParams.get('courses');
+let selectedCourse = ""; // Initialize selectedCourse
+
+if (course !== null) {
+    // The "course" parameter is present in the URL
+    selectedCourse = course;
+} else {
+    // The "course" parameter is not present in the URL
+    window.location.href = "./myCourses";
+    console.log("Course parameter is missing in the URL.");
+}
+
+//Question and options on the html page
+let question = fullQuestion.querySelector(".question p");
+let option_a = fullQuestion.querySelector("#option1 p");
+let optionAimage = fullQuestion.querySelector(".option1 img");
+
+let option_b = fullQuestion.querySelector("#option2 p");
+let optionBimage = fullQuestion.querySelector(".option2 img");
+
+let option_c = fullQuestion.querySelector("#option3 p");
+let optionCimage = fullQuestion.querySelector(".option3 img");
+
+let option_d = fullQuestion.querySelector("#option4 p");
+let optionDimage = fullQuestion.querySelector(".option4 img");
+
+
+let correctAns = "";
+let correctAnsContent = "";
+let clickedItem = "";
+
+
+function back() {
+    let xhr = new XMLHttpRequest();
+
+    xhr.open("POST", "php/pastQuestion.php", true);
+
+    xhr.onload = () => {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                console.log(xhr.responseText);
+                prevsqlData = JSON.parse(xhr.responseText);
+                console.log(prevsqlData);
+                presentCount--;
+                presentCount-1;
+                if (presentCount <= -1 || prevsqlData['questionID'].length == 0) {
+                    // questionGenerator()
+                    presentCount = prevsqlData['userAnswer'].length - 1;
+                   
+                 
+                }
+
+                optionAimage.src = "";
+                optionBimage.src = "";
+                optionCimage.src = "";
+                optionDimage.src = "";
+
+                question.textContent = prevsqlData['question'];
+                option_a.textContent = prevsqlData['option_a'];
+                option_b.textContent = prevsqlData['option_b'];
+                option_c.textContent = prevsqlData['option_c'];
+                option_d.textContent = prevsqlData['option_d'];
+                let OldcorrectAns = prevsqlData['answer'];
+                let OldUserAns = prevsqlData['userAnswer'][prevsqlData['QuestionNo']];
+                console.log(prevsqlData['userAnswer'].length);
+                console.log(presentCount);
+                currentCount = prevsqlData["questionStat"] - 1;
+
+               
+
+                if (OldcorrectAns == "A") {
+
+                    optionAimage.src = "icons/check-circle-svgrepo-com.png";
+                    correctAnsContent = option_a.textContent;
+
+                } else if (OldcorrectAns == "B") {
+                    optionBimage.src = "icons/check-circle-svgrepo-com.png";
+                    correctAnsContent = option_b.textContent;
+
+
+                } else if (OldcorrectAns == "C") {
+                    optionCimage.src = "icons/check-circle-svgrepo-com.png";
+                    correctAnsContent = option_c.textContent;
+
+                } else if (OldcorrectAns == "D") {
+                    optionDimage.src = "icons/check-circle-svgrepo-com.png";
+                    correctAnsContent = option_d.textContent;
+
+
+                }
+
+                if (correctAnsContent !== OldUserAns
+                    && option_a.textContent == OldUserAns) {
+
+                    optionAimage.src = "icons/cancel-svgrepo-com.png";
+                } else if (correctAnsContent !== OldUserAns
+                    && option_b.textContent == OldUserAns) {
+                    optionBimage.src = "icons/cancel-svgrepo-com.png";
+
+
+                } else if (correctAnsContent !== OldUserAns
+                    && option_c.textContent == OldUserAns) {
+                    optionCimage.src = "icons/cancel-svgrepo-com.png";
+
+                } else if (correctAnsContent !== OldUserAns
+                    && option_d.textContent == OldUserAns) {
+                    optionDimage.src = "icons/cancel-svgrepo-com.png";
+
+                }
+
+                currenQuestionNumber.textContent = prevsqlData["QuestionNo"] + 1;
+
+                console.log(prevsqlData["questionStat"]);
+
+                if (sqlData['questionStat'] >= numberOfQuestions) {
+                    window.location.href = "./winner";
+                }
+            } else {
+                console.error('Error:', xhr.status, xhr.statusText);
+            }
+        }
+    };
+
+
+    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+
+    // Example user answer (you should replace this with the actual user's answer)
+    xhr.send("backbtnClicked=" + encodeURIComponent(presentCount) + "&selectedCourse=" + encodeURIComponent(selectedCourse));
+
+
+
+}
+
+backBtn.addEventListener('click', back, false);
+
+
+
+
+
+function forward() {
+    
+    
+    let xhr = new XMLHttpRequest();
+
+    xhr.open("POST", "php/pastQuestion.php", true);
+
+    xhr.onload = () => {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                console.log(xhr.responseText);
+                prevsqlData = JSON.parse(xhr.responseText);
+                console.log(prevsqlData);
+                
+                optionAimage.src = "";
+                optionBimage.src = "";
+                optionCimage.src = "";
+                optionDimage.src = "";
+
+
+                question.textContent = prevsqlData['question'];
+                option_a.textContent = prevsqlData['option_a'];
+                option_b.textContent = prevsqlData['option_b'];
+                option_c.textContent = prevsqlData['option_c'];
+                option_d.textContent = prevsqlData['option_d'];
+                let OldcorrectAns = prevsqlData['answer'];
+                let OldUserAns = prevsqlData['userAnswer'][prevsqlData['QuestionNo']];
+                console.log(prevsqlData['userAnswer'].length);
+                console.log(presentCount);
+                
+                if (prevsqlData['score'] < 100) {
+                    displayedScore.textContent = "0" + prevsqlData['score'];
+                } else if (prevsqlData['score'] < 10) {
+                    displayedScore.textContent = "00" + prevsqlData['score'];
+                } else if (prevsqlData['score'] >= 100) {
+                    displayedScore.textContent = prevsqlData['score'];
+                } else if (prevsqlData['score'] <= 0 ) {
+                    displayedScore.textContent = "000";
+                }
+
+                presentCount++;
+
+                if (presentCount >= prevsqlData['questionID'].length) {
+                    presentCount = 0;
+                }
+                
+
+
+                if (OldcorrectAns == "A" && presentCount < prevsqlData['AllQuestions'].length - 1) {
+
+                    optionAimage.src = "icons/check-circle-svgrepo-com.png";
+                    correctAnsContent = option_a.textContent;
+
+                } else if (OldcorrectAns == "B" && presentCount < prevsqlData['AllQuestions'].length - 1) {
+                    optionBimage.src = "icons/check-circle-svgrepo-com.png";
+                    correctAnsContent = option_b.textContent;
+
+
+                } else if (OldcorrectAns == "C" && presentCount < prevsqlData['AllQuestions'].length - 1) {
+                    optionCimage.src = "icons/check-circle-svgrepo-com.png";
+                    correctAnsContent = option_c.textContent;
+
+                } else if (OldcorrectAns == "D" && presentCount < prevsqlData['AllQuestions'].length - 1) {
+                    optionDimage.src = "icons/check-circle-svgrepo-com.png";
+                    correctAnsContent = option_d.textContent;
+
+
+                }
+
+                if (correctAnsContent !== OldUserAns
+                    && option_a.textContent == OldUserAns) {
+
+                    optionAimage.src = "icons/cancel-svgrepo-com.png";
+                } else if (correctAnsContent !== OldUserAns
+                    && option_b.textContent == OldUserAns) {
+                    optionBimage.src = "icons/cancel-svgrepo-com.png";
+
+
+                } else if (correctAnsContent !== OldUserAns
+                    && option_c.textContent == OldUserAns) {
+                    optionCimage.src = "icons/cancel-svgrepo-com.png";
+
+                } else if (correctAnsContent !== OldUserAns
+                    && option_d.textContent == OldUserAns) {
+                    optionDimage.src = "icons/cancel-svgrepo-com.png";
+
+                }
+
+
+
+                currenQuestionNumber.textContent = prevsqlData["QuestionNo"] + 1;
+
+                console.log(prevsqlData["questionStat"]);
+
+                if (sqlData['questionStat'] >= numberOfQuestions) {
+                    window.location.href = "./winner";
+                }
+            } else {
+                console.error('Error:', xhr.status, xhr.statusText);
+            }
+        }
+    };
+
+
+    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+
+    // Example user answer (you should replace this with the actual user's answer)
+    xhr.send("backbtnClicked=" + encodeURIComponent(presentCount) + "&selectedCourse=" + encodeURIComponent(selectedCourse));
+
+
+
+}
+
+frwdBtn.addEventListener('click', forward, false);
+
+forward();

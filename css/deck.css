@@ -1,0 +1,75 @@
+.price-indicator,
+.intro-text h2,
+.payment_container h3{
+    color: var(--Orange-color);
+}
+
+.intro-text{
+    padding-block: 2.5rem;
+    max-width: 450px;
+    width: 90%;
+    margin: 0 auto;
+}
+.intro-text h2{
+    margin-block: 1rem ;
+}
+
+.cta-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 940px;
+    margin: 0 auto;
+    grid-column-gap: clamp(5rem, 15vw, 13rem);
+    grid-row-gap: 2em;
+}
+.cta-section > article{
+    box-shadow: var(--box-shadow);
+    padding: 1.5em 2.5em;
+    border-radius: var(--border-radius);
+}
+.payment_container .article{
+    margin-block: 1rem;
+}
+
+.price-indicator{
+    font-weight: bold;
+}
+
+.freeTrial_container .article{
+    margin-top: auto;
+}
+
+.freeTrial_heading{
+    margin-bottom: 4rem;
+    color: var(--black-color);
+    font-family: lato-black;
+}
+
+.cta-btn{
+    padding: .6em 2em;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--white-color);
+    background: var(--Orange-color);
+    margin-top: 1.5rem;
+    border-radius: 100px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.Start_trial-btn{
+    background: var(--Grey-color);
+}
+@media (max-width: 750px){
+    .cta-section{
+        grid-column-gap: clamp(1rem, 1vw, 3rem);
+    }
+}
+
+@media (max-width: 600px) {
+    .cta-section{
+        grid-template-columns: 1fr;
+        grid-column-gap: clamp(5rem, 15vw, 13rem);
+    }
+}

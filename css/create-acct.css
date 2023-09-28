@@ -1,0 +1,226 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+header {
+    width: 100%;
+    box-shadow: unset;
+    padding-block: 2rem;
+    position: unset;
+    display: none;
+}
+
+/* THE GST RIGHT LOGO WHICH IS DISPLAYED AS (GST QUIZ) */
+
+.gst-quiz {
+    font-family: lato-black;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-top: 15px;
+}
+
+/*======= MAIN SECTION OF THE CREATE ACCOUNT PAGE =========*/
+
+.create-acct_main {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: 0;
+}
+
+.create-acct_headings{
+    position: relative;
+}
+
+.create-acct_form {
+    text-align: left;
+}
+
+
+.create-acct-text-intro {
+    margin-block: 0.5rem 2.4375rem;
+}
+
+input, select {
+    width: 298px;
+    height: 47px;
+    display: block;
+    padding: .875em 1.5em;
+    margin-top: .75em;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--Grey-color);
+    outline: none;
+}
+
+input[type="submit"] {
+    width: 298px;
+    margin-bottom: 0.6875rem;
+    background: var(--Orange-color);
+    color: var(--white-color);
+    outline: none;
+    border: none;
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+}
+
+.existing-acct a {
+    font-weight: bold;
+    color: var(--color-brown);
+}
+
+.image_container {
+    height: fit-content;
+    line-height: 0;
+    align-self: center;
+    position: relative;
+}
+
+.create-acct_image_logo,
+.create-acct_image_text {
+    position: absolute;
+    left: 1.5rem;
+}
+
+
+.create-acct_image_logo {
+    top: 2rem;
+}
+
+.create-acct_image_text {
+    bottom: 2rem;
+}
+
+form.log_in input{
+    width: 100%;
+}
+
+/* ========== TABLET AND MOBILE VIEW ============== */
+
+@media (max-width: 800px) {
+
+    header {
+        display: block;
+    }
+
+    .create-acct_main {
+        grid-template-columns: 1fr;
+        margin-top: 2rem;
+    }
+
+    .create-acct_headings {
+        text-align: left;
+    }
+
+    .image_container {
+        display: none;
+    }
+
+    .create-acct_form {
+        display: grid;
+        place-items: center;
+    }
+}
+
+
+
+@media (max-width: 600px) {
+    input {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/*================== LOG IN PAGE STYLING ==================*/
+
+.create-acct_form.log_in {
+    display: grid;
+    place-content: center;
+}
+
+.create-acct_headings.log_in h1 {
+    margin-top: 22px;
+}
+
+.create-acct-text-intro.log_in {
+    margin-block: 8px 23px;
+}
+
+form.log_in input[type="submit"] {
+    width: 100%;
+}
+
+/* =============== Incorrect Password Prompt ================= */
+
+.incorrect-password{
+    justify-content: start;
+    gap: 1rem;
+    background: #F27A6D;
+    max-width: 368.97px;
+    border-radius: var(--border-radius);
+    padding: 15px 60px 15px 30px;
+    position: absolute;
+    top: 0;
+    display: none;
+}
+.password-input{
+    position: relative;
+    width: fit-content;
+    max-width: 298px;
+}
+.password-input input{
+    width: 100%;
+}
+.show-hide-password{
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 1.2rem;
+    height: .9rem;
+    background: url(../icons/eye-svgrepo-com.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    outline: none;
+    border: none;
+}
+
+.show-hide-password[data-toggle = 'true']{
+    background: url(../icons/eye-off-svgrepo-com.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.Password{
+    padding-right: 4rem;
+}
+
+.incorrect-password p{
+    color: var(--white-color);
+}
+
+@media (max-width: 800px) {
+    .create-acct_main.log_in{
+        height: 75vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .log_in-logo {
+        display: none;
+    }
+
+    .create-acct_headings.log_in {
+        width: 100%;
+        text-align: left;
+    }
+    form input[type="submit"] {
+        width: 100%;
+    }
+    form.log_in input[type="submit"] {
+        width: 100%;
+    }
+}
