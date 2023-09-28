@@ -59,6 +59,9 @@ if (!isset($_SESSION['unique_id'])) {
                         <li>
                             <a href="myCourses">My quizzes</a>
                         </li>
+                        <li>
+                            <a href="payment">Buy Courses</a>
+                        </li>
                         <a href="./php/logout.php">
                         <li class="log-out row">
                             
