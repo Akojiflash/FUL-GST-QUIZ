@@ -67,7 +67,7 @@
                     <img src="icons/Path 44.png" alt="">
                 </button>
             </a>
-            <a href="#">
+            <a href="score">
                 <button class="row2">
                     Continue
                     <img src="icons/continue.png" alt="">
