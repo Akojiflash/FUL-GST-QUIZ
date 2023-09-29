@@ -100,7 +100,7 @@ function QuestionGenerator()
     global $conn;
     
 
-    $course =$_SESSION['courses'];
+    $course = $_SESSION['courses'];
     // Check if a question ID is already stored in the session
     if (!isset($_SESSION['userAns']) && !isset($_SESSION['questionID'])) {
         // If not, generate and store a random question ID

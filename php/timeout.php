@@ -15,6 +15,6 @@ unset($_SESSION['option_b']);
 unset($_SESSION['option_c']);
 unset($_SESSION['option_d']);
 unset($_SESSION['row2']);
-
+unset($_SESSION['courses']);
 gc_collect_cycles();
 memory_reset_peak_usage();
