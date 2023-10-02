@@ -17,6 +17,6 @@ $data .=
                         <img src='icons/Wgold.png'>
                     </span>
                 </div>
-                <a href='./php/tryagain.php?courses=".$row['course_id']."'><button class='try-again-btn'>Try Again</button></a>
+                <a href='./questions?courses=".$row['course_id']."'><button class='try-again-btn'>Try Again</button></a>
             </article>
            ";

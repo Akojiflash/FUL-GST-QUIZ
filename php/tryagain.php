@@ -1,13 +1,8 @@
 <?php 
 
 
-include "timeout.php";
 
-if(isset($_SESSION['courses'])){
-    header("Location: ../questions" . "?courses=" .$_SESSION['courses']); 
-    //
+include "./winner.php";
+include "./timeout.php";
 
-}else{
-    header("Location: ../myCourses"); 
-}
-
+header("Location: ../questions?courses=". $courseID); 

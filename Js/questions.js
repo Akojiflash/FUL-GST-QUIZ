@@ -10,7 +10,7 @@ let frwdBtn = document.querySelector('#forward');
 let course_code = document.querySelector(".selected_course");
 let currenQuestionNumber = document.querySelector(".current-question_number");
 let displayedScore = document.querySelector(".Points span")
-const numberOfQuestions = 30;
+const numberOfQuestions = 5;
 let presentCount = 0;
 
 let currentCount = 0;

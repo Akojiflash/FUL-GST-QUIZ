@@ -1,7 +1,8 @@
 <?php
 
 include_once "config.php";
-session_start();
+include "./timeout.php";
+
 $user_id = -1;
 if (isset($_SESSION['unique_id'])){
     $user_id = $_SESSION['unique_id'];

@@ -53,6 +53,7 @@ let clickedItem = "";
 
 
 function back() {
+    presentCount-1;
     let xhr = new XMLHttpRequest();
 
     xhr.open("POST", "php/pastQuestion.php", true);
@@ -64,7 +65,7 @@ function back() {
                 prevsqlData = JSON.parse(xhr.responseText);
                 console.log(prevsqlData);
                 presentCount--;
-                presentCount-1;
+               
                 if (presentCount <= -1 || prevsqlData['questionID'].length == 0) {
                     // questionGenerator()
                     presentCount = prevsqlData['userAnswer'].length - 1;
@@ -161,7 +162,8 @@ backBtn.addEventListener('click', back, false);
 
 function forward() {
     
-    
+    presentCount+1;
+
     let xhr = new XMLHttpRequest();
 
     xhr.open("POST", "php/pastQuestion.php", true);

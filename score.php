@@ -10,10 +10,17 @@
 
 </head>
 <body>
-   
-
 <?php include "includes/header.php" ?>
 <?php include "php/timeout.php" ?> 
+<?php // Set cache control headers
+header("Cache-Control: no-cache, must-revalidate");
+header("Pragma: no-cache");
+header("Expires: 0");
+header("Cache-Control: private");
+
+
+?>
+
     <main class="container main_content">
 
         <h1 class="scoreboard-heading">Score Board</h1>

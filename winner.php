@@ -17,7 +17,10 @@
 <body>
 
 <?php include "includes/header.php" ?> 
-<?php include "php/winner.php" ?>
+<?php include "php/winner.php";?>
+<?php if(!isset($courseID)){
+    header("location: score");
+} ?>
 
     <main class="container winner__main">
         <h1><em></em></h1>
@@ -61,7 +64,7 @@
                     Try Again
                 </button>
             </a>
-            <a href="review?courses=<?php echo $_SESSION['courses'] ?>">
+            <a href="review?courses=<?php echo $courseID ?>">
                 <button class="row2">
                    Review
                     <img src="icons/Path 44.png" alt="">

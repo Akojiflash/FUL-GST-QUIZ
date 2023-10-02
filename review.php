@@ -16,8 +16,14 @@
 
     <?php 
     include "includes/header.php"; 
+    
     if(!isset($_SESSION['courses'])){
-        header("courseselection");
+        if(isset($_GET['courses'])){
+            $_GET['courses'] = $_SESSION['courses'];
+        }else{
+            header("courseselection");
+        }
+        
     }
     
     ?>
