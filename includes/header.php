@@ -21,8 +21,15 @@ if (!isset($_SESSION['unique_id'])) {
 
         $row = mysqli_fetch_assoc($sql);
     }
+   
+    $_SESSION['trials'] = $row['trials'];
+    $trials = $_SESSION['trials'];
+    if($_SESSION['trials'] <0){
+        $trials = 0;
+    }
     
     ?>
+    
     <nav class="container row main-nav">
         <div class="gst-logo_container">
             <a href="myCourses">
@@ -54,7 +61,7 @@ if (!isset($_SESSION['unique_id'])) {
                             <a href="score">Scoreboard</a>
                         </li>
                         <li>
-                            <a href="courseselection">Quiz trial (<span class="trials">3</span>)</a>
+                            <a href="courseselection">Quiz trial (<span class="trials"><?php echo  $trials; ?></span>)</a>
                         </li>
                         <li>
                             <a href="myCourses">My quizzes</a>

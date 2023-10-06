@@ -5,13 +5,40 @@ session_start();
 if (!isset($_SESSION['score']['score'])) {
     $_SESSION['score']['score'] = 0;
 }
-if(isset( $_POST['selectedCourse'])){
-   $_SESSION['courses'] = mysqli_real_escape_string($conn, $_POST['selectedCourse']);
-} else if (isset($_SESSION['courses'])){
-    
+if (isset($_POST['selectedCourse'])) {
+    $_SESSION['courses'] = mysqli_real_escape_string($conn, $_POST['selectedCourse']);
+} else if (isset($_SESSION['courses'])) {
 }
 
 
+//fetch present trial status
+$query3 = "SELECT trials FROM users WHERE unique_id = '{$_SESSION['unique_id']}'";
+$result3 = mysqli_query($conn, $query3);
+$assoc = mysqli_fetch_assoc($result3);
+$_SESSION['trials'] = $assoc['trials'];
+
+// Check if the update has already been performed
+if ($_SESSION['trials'] >= 0) {
+    if (!isset($_SESSION['update_completed']) || $_SESSION['update_completed'] !== true) {
+        // Decrement the value of $_SESSION['trials'] by 1
+        $_SESSION['trials']--;
+
+        // Update the database
+        $query = "UPDATE users SET trials = '{$_SESSION['trials']}' WHERE unique_id = '{$_SESSION['unique_id']}'";
+        $result = mysqli_query($conn, $query);
+
+        if ($result) {
+            // Mark the update as completed
+            $_SESSION['update_completed'] = true;
+        } else {
+            // Handle the database update error
+            echo "Error: " . mysqli_error($conn);
+        }
+    }
+}
+
+$trials = ['trials' => $_SESSION['trials']];
+//
 
 $GstCourses = [
     'gst_101' => 'Gst 101', 'gst_102' => 'Gst 102', 'gst_103' => 'Gst 103', 'gst_104' => 'Gst 104',
@@ -53,7 +80,7 @@ function scoreCount()
 
             $_SESSION['correctAnswer'] = $_SESSION['option_d'];
         }
-        
+
         if (compareStringsIgnoringSpecialChars($_SESSION['correctAnswer'], $_SESSION['userAns'])) {
             $_SESSION['score']['score'] += 10;
         }
@@ -68,7 +95,8 @@ function scoreCount()
     }
 }
 
-function compareStringsIgnoringSpecialChars($str1, $str2) {
+function compareStringsIgnoringSpecialChars($str1, $str2)
+{
     // Remove special characters from both strings and convert to lowercase
     $cleanStr1 = preg_replace('/[^a-z0-9]/i', '', $str1);
     $cleanStr2 = preg_replace('/[^a-z0-9]/i', '', $str2);
@@ -96,9 +124,9 @@ if (isset($_SESSION['userAns'])) {
 function QuestionGenerator()
 {
 
-   
+
     global $conn;
-    
+
 
     $course = $_SESSION['courses'];
     // Check if a question ID is already stored in the session
@@ -111,7 +139,7 @@ function QuestionGenerator()
             $row = mysqli_fetch_assoc($result);
             $_SESSION['questionID'] = $row['id'];
             unset($result);
-           
+
             memory_reset_peak_usage();
         } else {
             // Handle the case when no questions are available
@@ -124,10 +152,10 @@ function QuestionGenerator()
         $_SESSION['questionStat'] = ['questionStat'  => count($_SESSION['answers']['questionID'])];
     }
 
-    while (in_array($_SESSION['questionID'],$_SESSION['answers']['questionID']) && isset($_SESSION['questionID'])){
-        unset( $_SESSION['questionID']);
+    while (in_array($_SESSION['questionID'], $_SESSION['answers']['questionID']) && isset($_SESSION['questionID'])) {
+        unset($_SESSION['questionID']);
         QuestionGenerator();
-}
+    }
 }
 
 QuestionGenerator();
@@ -139,9 +167,9 @@ function QuestionOutPut()
     // QuestionGenerator();
     global $GstCourses;
     global $conn;
-
-    $course =$_SESSION['courses'];
-    if (!in_array($_SESSION['questionID'],$_SESSION['answers']['questionID']) && isset($_SESSION['questionID'])) {
+    global $trials;
+    $course = $_SESSION['courses'];
+    if (!in_array($_SESSION['questionID'], $_SESSION['answers']['questionID']) && isset($_SESSION['questionID'])) {
         $query2 = "SELECT * FROM $course WHERE id = '{$_SESSION['questionID']}'";
         if (isset($_SESSION['questionID']) && !in_array($_SESSION['questionID'], $_SESSION['AllQuestions']['AllQuestions'])) {
             array_push($_SESSION['AllQuestions']['AllQuestions'], $_SESSION['questionID']);
@@ -153,8 +181,8 @@ function QuestionOutPut()
     if (isset($result2)) {
         if (mysqli_num_rows($result2) > 0) {
             $_SESSION['row2'] = mysqli_fetch_assoc($result2);
-           
-        
+
+
 
             if (!isset($_SESSION['option_a'])) {
                 $_SESSION['option_a'] =  $_SESSION['row2']['option_a'];
@@ -171,19 +199,16 @@ function QuestionOutPut()
             //correct option
             if (!isset($_SESSION['correctOption'])) {
                 $_SESSION['correctOption'] = $_SESSION['row2']['answer'];
-               
             }
 
 
             $_SESSION['row2'] = array_merge($_SESSION['row2'], $_SESSION['answers']);
             if (isset($_SESSION['questionStat'])) {
                 $_SESSION['row2'] = array_merge($_SESSION['row2'],  $_SESSION['questionStat']);
-         
             }
             if (isset($_SESSION['courses'])) {
                 $CurrentCourse = ['course' => $GstCourses[$_SESSION['courses']]];
                 $_SESSION['row2'] = array_merge($_SESSION['row2'],  $CurrentCourse);
-               
             }
             // if(isset($_SESSION['PrevQuestion'])){
             //     $prevQuestNo = ['PrevQuestion' => $_SESSION['PrevQuestion']];
@@ -192,14 +217,15 @@ function QuestionOutPut()
             if (isset($_SESSION['AllQuestions'])) {
 
                 $_SESSION['row2'] = array_merge($_SESSION['row2'], $_SESSION['AllQuestions']);
-              
             }
+            if (isset($_SESSION['trials'])) {
 
+                $_SESSION['row2'] = array_merge($_SESSION['row2'], $trials);
+            }
 
             //ech user score
             if (isset($_SESSION['score'])) {
                 $_SESSION['row2'] = array_merge($_SESSION['row2'],  $_SESSION['score']);
-           
             }
 
 
@@ -208,10 +234,10 @@ function QuestionOutPut()
             echo json_encode($_SESSION['row2']);
 
             // Set the Content-Type header to indicate JSON response
-           
+
 
             // Output the JSON data
-           
+
         }
     } else {
         // Handle the case when the stored question ID is invalid
@@ -226,7 +252,3 @@ function QuestionOutPut()
 
 
 QuestionOutPut();
-
-
-
-

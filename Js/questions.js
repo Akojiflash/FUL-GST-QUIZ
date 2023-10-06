@@ -10,7 +10,7 @@ let frwdBtn = document.querySelector('#forward');
 let course_code = document.querySelector(".selected_course");
 let currenQuestionNumber = document.querySelector(".current-question_number");
 let displayedScore = document.querySelector(".Points span")
-const numberOfQuestions = 5;
+const numberOfQuestions = 30;
 let presentCount = 0;
 
 let currentCount = 0;
@@ -133,6 +133,8 @@ function ClickedAns(event) {
 
                     if (sqlData['questionStat'] >= numberOfQuestions) {
                         window.location.href = "./winner";
+                    }else if(sqlData['trials'] < 0){
+                        window.location.href = "./courseselection"
                     }
                 } else {
                     console.error('Error:', xhr.status, xhr.statusText);
@@ -205,6 +207,8 @@ function questionGenerator() {
             }
             if (sqlData['questionStat'] >= numberOfQuestions) {
                 window.location.href = "./winner";
+            }else if(sqlData['trials'] < 0){
+                window.location.href = "./courseselection"
             }
         } else {
             console.error('Error:', xhr.status, xhr.statusText);
@@ -306,6 +310,8 @@ function back() {
 
                 if (sqlData['questionStat'] >= numberOfQuestions) {
                     window.location.href = "./winner";
+                }else if(sqlData['trials'] < 0){
+                    window.location.href = "./courseselection";
                 }
             } else {
                 console.error('Error:', xhr.status, xhr.statusText);
@@ -417,6 +423,8 @@ function forward() {
 
                 if (sqlData['questionStat'] >= numberOfQuestions) {
                     window.location.href = "./winner";
+                }else if(sqlData['trials'] < 0){
+                    window.location.href = "./courseselection";
                 }
             } else {
                 console.error('Error:', xhr.status, xhr.statusText);

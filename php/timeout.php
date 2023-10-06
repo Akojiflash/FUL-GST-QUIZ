@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 unset($_SESSION['questionID']);
 unset($_SESSION['time']);
 unset($_SESSION['userAns']);
@@ -16,3 +16,4 @@ unset($_SESSION['option_c']);
 unset($_SESSION['option_d']);
 unset($_SESSION['row2']);
 unset($_SESSION['courses']);
+unset($_SESSION['update_completed']);

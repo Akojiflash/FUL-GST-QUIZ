@@ -13,8 +13,24 @@
 </head>
 
 <body>
-    <?php include "includes/header.php" ?> 
+<?php include "includes/header.php" ?>
     <?php include "php/timeout.php" ?>
+
+    <?php
+    // include_once "./php/config.php";
+    $query3 = "SELECT trials FROM users WHERE unique_id = '{$_SESSION['unique_id']}'";
+    $result3 = mysqli_query($conn, $query3);
+    $assoc = mysqli_fetch_assoc($result3);
+    $_SESSION['trials'] = $assoc['trials'];
+    $trials = $_SESSION['trials'];
+    if($_SESSION['trials'] <0){
+        $trials = 0;
+    }
+    
+    ?>
+    
+    
+
     <main class="container course_selection-main">
         <div>
             <p class="selection__text">
@@ -22,7 +38,7 @@
                 for a single attempt, afterward, the trial expires.
             </p>
             <p class="trials__text">
-                Number of courses left (<span><?php echo  $_SESSION['trials']; ?></span>) before trial expires.
+                Number of courses left (<span><?php echo   $trials; ?></span>) before trial expires.
             </p>
             <h3 class="course-selection_heading">Select a course to start quiz</h3>
         </div>
