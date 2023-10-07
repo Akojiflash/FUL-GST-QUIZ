@@ -45,58 +45,7 @@
 
         <section class="courses">
 
-            <!-- <div class="courses_wrapper">
-
-                <a href="questions">
-                    <div class="course">
-                        <p>Gst 101</p>
-                    </div>
-                </a>
-                <a href="questions">
-                    <div class="course">
-                        <p>Gst 102</p>
-                    </div>
-                </a>
-                <a href="questions?courses=gst_103">
-                    <div class="course">
-                        <p>Gst 103</p>
-                    </div>
-                </a>
-                <a href="questions">
-                    <div class="course">
-                        <p>Gst 104</p>
-                    </div>
-                </a>
-                <a href="questions">
-                    <div class="course course-4">
-                        <p>Gst 107</p>
-                    </div>
-                </a>
-            </div>
-            <div class="courses_wrapper">
-                <a href="questions">
-                    <div class="course">
-                        <p>Gst 110</p>
-                    </div>
-                </a>
-                <a href="questions">
-                    <div class="course">
-                        <p>Gst 202</p>
-                    </div>
-                </a>
-                <a href="questions">
-                    <div class="course">
-                        <p>Gst 204</p>
-                    </div>
-                </a>
-                <a href="questions">
-                    <div class="course">
-                        <p>Gst 205</p>
-                    </div>
-                </a>
-
-            </div> -->
-
+            
         </section>
     </main>
 
