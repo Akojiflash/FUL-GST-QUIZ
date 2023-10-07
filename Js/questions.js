@@ -14,6 +14,38 @@ const numberOfQuestions = 30;
 let presentCount = 0;
 
 let currentCount = 0;
+//Check if user data has expired
+
+function trial_expire(){
+    let xhr = new XMLHttpRequest();
+
+xhr.open("POST", "php/trial.php", true);
+
+xhr.onload = () => {
+    if(xhr.readyState === XMLHttpRequest.DONE){
+        if(xhr.status === 200) {
+            console.log(xhr.responseText);
+           let trial = xhr.responseText;
+           if (trial == "fail"){
+            window.location.href = "./courseselection";
+           }
+        }
+    }else {
+        console.error('Error:', xhr.status, xhr.statusText);
+    }
+};
+
+xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+
+// Example user answer (you should replace this with the actual user's answer)
+xhr.send();
+
+}
+
+trial_expire();
+
+
+
 
 
 //keeps track of number of answered questions;
@@ -133,9 +165,10 @@ function ClickedAns(event) {
 
                     if (sqlData['questionStat'] >= numberOfQuestions) {
                         window.location.href = "./winner";
-                    }else if(sqlData['trials'] < 0){
-                        window.location.href = "./courseselection"
                     }
+                    // else if(sqlData['trials'] < 0){
+                    //     window.location.href = "./courseselection"
+                    // }
                 } else {
                     console.error('Error:', xhr.status, xhr.statusText);
                 }

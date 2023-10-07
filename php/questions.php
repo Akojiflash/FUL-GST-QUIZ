@@ -1,7 +1,11 @@
 <?php
 include_once "config.php";
-session_start();
+include "trial.php";
+// session_start();
 // Initialize or assign default values to session variables
+
+
+
 if (!isset($_SESSION['score']['score'])) {
     $_SESSION['score']['score'] = 0;
 }
@@ -11,11 +15,7 @@ if (isset($_POST['selectedCourse'])) {
 }
 
 
-//fetch present trial status
-$query3 = "SELECT trials FROM users WHERE unique_id = '{$_SESSION['unique_id']}'";
-$result3 = mysqli_query($conn, $query3);
-$assoc = mysqli_fetch_assoc($result3);
-$_SESSION['trials'] = $assoc['trials'];
+
 
 // Check if the update has already been performed
 if ($_SESSION['trials'] >= 0) {
