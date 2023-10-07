@@ -39,11 +39,18 @@ if ($_SESSION['trials'] >= 0) {
 
 $trials = ['trials' => $_SESSION['trials']];
 //
+//Display the course code on the question page
+$GstCourses = [];
+$query4 = "SELECT * FROM courses";
+$result4 = mysqli_query($conn, $query4);
 
-$GstCourses = [
-    'gst_101' => 'Gst 101', 'gst_102' => 'Gst 102', 'gst_103' => 'Gst 103', 'gst_104' => 'Gst 104',
-    'gst_107' => 'Gst 107', 'gst_110' => 'Gst 110', 'gst_202' => 'Gst 202', 'gst_204' => 'Gst 204', 'gst_205' => 'Gst 205'
-];
+if ($result4 && mysqli_num_rows($result4) > 0) {
+
+    while ($row4 = mysqli_fetch_assoc($result4)) {
+        $GstCourses[$row4['course_id']] = $row4['course_code'];
+    }
+}
+
 
 if (isset($_POST['userAns'])) {
     $_SESSION['userAns'] = mysqli_real_escape_string($conn, $_POST['userAns']);

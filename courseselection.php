@@ -44,7 +44,9 @@
         </div>
 
         <section class="courses">
-            <div class="courses_wrapper">
+
+            <!-- <div class="courses_wrapper">
+
                 <a href="questions">
                     <div class="course">
                         <p>Gst 101</p>
@@ -92,7 +94,9 @@
                         <p>Gst 205</p>
                     </div>
                 </a>
-            </div>
+
+            </div> -->
+
         </section>
     </main>
 
@@ -101,6 +105,7 @@
 
 
     <script src="Js/nav.js"></script>
+    <script src="Js/courseselection.js"></script>
 </body>
 
 </html>

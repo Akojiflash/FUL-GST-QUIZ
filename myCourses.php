@@ -16,13 +16,22 @@
 <body>
 
 <?php include "includes/header.php" ?> 
-<?php include "php/timeout.php"
+<?php include "php/timeout.php";
+$query3 = "SELECT trials FROM users WHERE unique_id = '{$_SESSION['unique_id']}'";
+$result3 = mysqli_query($conn, $query3);
+$assoc = mysqli_fetch_assoc($result3);
+$_SESSION['trials'] = $assoc['trials'];
+$trials = $_SESSION['trials'];
+if($_SESSION['trials'] <0){
+    $trials = 0;
+}
+
 
 ?>
     <main class="container mycourses__container">
             <div>
                 <h3>Select a course to start quiz</h3>
-                <p class="trials-left-text">You still have (<span class="no-of-trials-left"><?php echo  $_SESSION['trials']; ?></span>) trials left click <a href="courseselection">here</a> to proceed to trials</p>
+                <p class="trials-left-text">You still have (<span class="no-of-trials-left"><?php echo   $trials; ?></span>) trials left click <a href="courseselection">here</a> to proceed to trials</p>
             </div>
 
             <section class="courses_section">
