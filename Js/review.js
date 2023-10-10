@@ -83,6 +83,7 @@ function back() {
                 option_b.textContent = prevsqlData['option_b'];
                 option_c.textContent = prevsqlData['option_c'];
                 option_d.textContent = prevsqlData['option_d'];
+                
                 let OldcorrectAns = prevsqlData['answer'];
                 let OldUserAns = prevsqlData['userAnswer'][prevsqlData['QuestionNo']];
                 console.log(prevsqlData['userAnswer'].length);
@@ -186,6 +187,7 @@ function forward() {
                 option_b.textContent = prevsqlData['option_b'];
                 option_c.textContent = prevsqlData['option_c'];
                 option_d.textContent = prevsqlData['option_d'];
+                course_code.textContent = prevsqlData['course_code'];
                 let OldcorrectAns = prevsqlData['answer'];
                 let OldUserAns = prevsqlData['userAnswer'][prevsqlData['QuestionNo']];
                 console.log(prevsqlData['userAnswer'].length);

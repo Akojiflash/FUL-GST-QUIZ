@@ -2,6 +2,7 @@
 
 const fullQuestion = document.querySelector(".question_wrapper");
 let answer = document.querySelector(".options"); // Assuming "answer" is an array of elements with the class "option"
+
 let sqlData = "";
 let prevsqlData = "";
 let ClickMoreOption = true;
@@ -10,11 +11,37 @@ let frwdBtn = document.querySelector('#forward');
 let course_code = document.querySelector(".selected_course");
 let currenQuestionNumber = document.querySelector(".current-question_number");
 let displayedScore = document.querySelector(".Points span")
-const numberOfQuestions = 30;
+var numberOfQuestions =0;
 let presentCount = 0;
 
 let currentCount = 0;
-//Check if user data has expired
+
+//Number of questions to answer
+function number_of_Questions(){
+    let xhr = new XMLHttpRequest();
+
+xhr.open("POST", "php/questionNumber.php", true);
+
+xhr.onload = () => {
+    if(xhr.readyState === XMLHttpRequest.DONE){
+        if(xhr.status === 200) {
+            
+            numberOfQuestions = xhr.responseText;
+           
+        }
+    }else {
+        console.error('Error:', xhr.status, xhr.statusText);
+    }
+};
+
+xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+
+// Example user answer (you should replace this with the actual user's answer)
+xhr.send();
+
+}
+number_of_Questions()
+
 
 function trial_expire(){
     let xhr = new XMLHttpRequest();
@@ -24,7 +51,7 @@ xhr.open("POST", "php/trial.php", true);
 xhr.onload = () => {
     if(xhr.readyState === XMLHttpRequest.DONE){
         if(xhr.status === 200) {
-            console.log(xhr.responseText);
+            
            let trial = xhr.responseText;
            if (trial == "fail"){
             window.location.href = "./courseselection";

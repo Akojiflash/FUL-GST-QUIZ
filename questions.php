@@ -43,7 +43,7 @@
         </div>
 
         <section>
-            <h1 class="selected_course">GST 101</h1>
+            <h1 class="selected_course"></h1>
                 
             <div class="question__board">
                 <div class="row question-bar">

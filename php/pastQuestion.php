@@ -7,6 +7,8 @@ session_start();
 $course = mysqli_real_escape_string($conn, $_POST['selectedCourse']);
 $ClickBack = intval(mysqli_real_escape_string($conn, $_POST['backbtnClicked']));
 
+// $course = $_SESSION['courses'];
+
 $incomingPost = ['course' => $course, 'clickBack' => $ClickBack];
 
 if (isset($ClickBack) && $ClickBack > -1 && $ClickBack < count($_SESSION['AllQuestions']['AllQuestions']) ) {
@@ -19,6 +21,16 @@ if (isset($course) && isset($_SESSION['presentQuestId']) && $_SESSION['presentQu
     
 }
 //prev question toggler array;
+$GstCourses = [];
+$query4 = "SELECT * FROM courses";
+$result4 = mysqli_query($conn, $query4);
+
+if ($result4 && mysqli_num_rows($result4) > 0) {
+
+    while ($row4 = mysqli_fetch_assoc($result4)) {
+        $GstCourses[$row4['course_id']] = $row4['course_code'];
+    }
+}
 
 
 $revQuest = ['QuestionNo' => $ClickBack];
@@ -38,6 +50,11 @@ if (mysqli_num_rows($result) > 0 && isset($result)) {
         $score = ['score' => $_SESSION['row2']['score'] ];
         $data = array_merge($data, $score);
     }
+    
+        $CurrentCourse = ['course_code' => $GstCourses[$course]];
+        $data = array_merge($data,  $CurrentCourse);
+
+    
     
     $json_data = json_encode($data);
     header('Content-Type: application/json');
