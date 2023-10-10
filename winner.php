@@ -16,14 +16,18 @@
 
 <body>
 
-<?php include "includes/header.php" ?> 
+<?php include "includes/header.php" ;?> 
 <?php include "php/winner.php";?>
-<?php if(!isset($courseID)){
+<?php
+
+ if(!isset($courseID)){
     header("location: score");
 } 
-if(!isset($_SESSION['quize_completed'])){
-    header("location: questions?courses=".$_SESSION['courses']);
-}
+// echo $_SESSION['AllQuestions'];
+// echo $_SESSION['quize_completed'];
+// if(count($_SESSION['AllQuestions']) < 28){
+//     header("location: questions?courses=".$_SESSION['courses']);
+// }
 ?>
 
     <main class="container winner__main">
