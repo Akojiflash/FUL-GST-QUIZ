@@ -18,7 +18,7 @@
     if(!isset($_SESSION['courses'])){
         header("courseselection");
     }
-    
+
     ?>
    
     <main class="container questions__main">

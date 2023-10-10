@@ -25,7 +25,9 @@
         }
         
     }
-    
+    if(!isset($_SESSION['quize_completed'])){
+        header("location: questions?courses=".$_SESSION['courses']);
+    }
     ?>
    
     <main class="container questions__main">

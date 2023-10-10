@@ -54,7 +54,7 @@ xhr.onload = () => {
             
            let trial = xhr.responseText;
            if (trial == "fail"){
-            window.location.href = "./courseselection";
+            window.location.href = "./payment";
            }
         }
     }else {

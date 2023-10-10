@@ -20,7 +20,11 @@
 <?php include "php/winner.php";?>
 <?php if(!isset($courseID)){
     header("location: score");
-} ?>
+} 
+if(!isset($_SESSION['quize_completed'])){
+    header("location: questions?courses=".$_SESSION['courses']);
+}
+?>
 
     <main class="container winner__main">
         <h1><em></em></h1>

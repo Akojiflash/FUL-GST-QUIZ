@@ -17,3 +17,4 @@ unset($_SESSION['option_d']);
 unset($_SESSION['row2']);
 unset($_SESSION['courses']);
 unset($_SESSION['update_completed']);
+unset($_SESSION['quize_completed']);

@@ -63,7 +63,16 @@ if (!isset($_SESSION['answers'])) {
 
 if (!isset($_SESSION['AllQuestions'])) {
     $_SESSION['AllQuestions'] = ['AllQuestions' => []];
+
 }
+
+//Check if user has completed the quiz
+if(!isset($_SESSION['quize_completed'])){
+    if(count($_SESSION['AllQuestions']) >=30){
+        $_SESSION['quize_completed'] = true;
+    }
+}
+
 
 // Define or initialize other variables as needed
 $CheckCorrectText;
