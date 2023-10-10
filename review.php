@@ -25,6 +25,10 @@
         }
         
     }
+    //ensures the quiz is completed before moving to the previous
+    if(!isset($_SESSION['quize_completed'])){
+        header("location: questions?courses=".$_SESSION['courses']);
+    }
    
     ?>
    

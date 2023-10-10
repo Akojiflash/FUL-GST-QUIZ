@@ -67,7 +67,7 @@ if (!isset($_SESSION['AllQuestions'])) {
 }
 
 //Check if user has completed the quiz
-if(!isset($_SESSION['quize_completed']) && count($_SESSION['AllQuestions']) >=30){
+if(!isset($_SESSION['quize_completed']) && count($_SESSION['AllQuestions']['AllQuestions']) >=29){
     
         $_SESSION['quize_completed'] = true;
     echo $_SESSION['quize_completed'];
