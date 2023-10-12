@@ -26,18 +26,7 @@
         </div>
 
         <section class="cta-section">
-            <article class="payment_container">
-                <h3>Ready for More?</h3>
-                <p class="article">
-                    Unlock Limitless Practice Question.
-                    Supercharge Your Prep and Conquer GST Exams!
-                </p>
-                <p class="price-indicator">(N100 per GST Only)</p>
-                <a href="payment">
-                    <button class="payment_cta-btn cta-btn">Pay Now</button>
-                </a>
-
-            </article>
+            
             <article class="freeTrial_container">
                 <h2 class="freeTrial_heading">Start trial</h2>
                 <p class="article">
@@ -47,6 +36,18 @@
                 <a href="courseselection">
                     <button class="Start_trial-btn cta-btn">Start trial</button>
                 </a>
+            </article>
+            <article class="payment_container">
+                <h3>Ready for More?</h3>
+                <p class="article">
+                    Unlock Limitless Practice Question.
+                    Supercharge Your Prep and Conquer GST Exams!
+                </p>
+                <p class="price-indicator">(&#8358;100 per GST Only)</p>
+                <a href="payment">
+                    <button class="payment_cta-btn cta-btn">Pay Now</button>
+                </a>
+
             </article>
         </section>
     </main>

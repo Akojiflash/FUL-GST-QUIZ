@@ -28,6 +28,15 @@
     color: var(--Brown-color);
 }
 
+#gstcourse{
+    display: flex;
+    justify-content: space-between;
+}
+.course-selected-indicator{
+    width: 24px;
+}
+
+
 .courses_wrapper {
     max-width: 287px;
     width: 100%;

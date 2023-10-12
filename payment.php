@@ -22,7 +22,7 @@
             <h3 class="course-selection_heading payment">Select the course(s) you wish to pay for</h3>
 
             <p class="selection__text payment">
-                Each course cost (#100) only
+                Each course cost (&#8358;100) only
             </p>
         </div>
 
@@ -33,8 +33,9 @@
                         <span>Gst 101</span>
                         
                     </div>
-                    <div class="course gst gst102">
+                    <div id="gstcourse" class="course gst gst102">
                         <span>Gst 102</span>
+                        <img class="course-selected-indicator" src="icons/radio-button-checked-svgrepo-com.svg" alt="">
                     </div>
                     <div class="course gst gst103">
                         <span>Gst 103</span>
@@ -42,7 +43,9 @@
                     <div class="course gst gst104">
                         <span>Gst 104</span>
                     </div>
-                    <div class="course gst course-4 gst107">
+                    <div class="course gst 
+                   course-4 
+                    gst107">
                         <span>Gst 107</span>
                     </div>
                 </div>
@@ -69,10 +72,10 @@
                 </div>
                 <div class="row total-courses">
                     <p>Total</p>
-                    <p>#<span class="total-price-of-courses-to-pay-for">0</span></p>
+                    <p>&#8358;<span class="total-price-of-courses-to-pay-for">0</span></p>
                 </div>
 
-                <button class="payment_cta-btn">Check Out (#<span class="total-cost-of-courses">0</span>)</button>
+                <button class="payment_cta-btn">Check Out (&#8358;<span class="total-cost-of-courses">0</span>)</button>
             </div>
         </section>
     </main>
@@ -82,6 +85,8 @@
 
 
     <script src="Js/nav.js"></script>
+    <script src="Js/payment.js"></script>
+    <!-- <script src="Js/paymentCourse.js"></script> -->
 </body>
 
 </html>
