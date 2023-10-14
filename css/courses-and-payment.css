@@ -34,6 +34,14 @@
     justify-content: space-between;
 }
 
+.greyout{
+    color: #888; /* Set the text color to a shade of gray */
+    opacity: 0.5; /* Reduce the opacity to make it semi-transparent */
+    cursor: pointer;
+    cursor: auto;
+}
+
+
 .course-selected-indicator{
     width: 24px;
 }

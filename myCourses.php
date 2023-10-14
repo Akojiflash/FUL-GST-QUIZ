@@ -47,6 +47,7 @@ if($_SESSION['trials'] <0){
                         </div>
                     </a>
                 </div>
+                
                 <div class="my_Courses">
                     <a href="courseselection.html"><button class="add-more-courses_btn">Add more Courses</button></a>
                 </div>

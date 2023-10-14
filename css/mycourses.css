@@ -45,10 +45,10 @@
 }
 
 .courses_section{
-    display: none;
+    display: block;
 }
 .empty-course_section{
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 1em;
     max-width: 342px;

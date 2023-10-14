@@ -28,7 +28,42 @@
 
         <section role="contentinfo" class="payment-for-courses__wrapper row">
             <div class="courses gsts">
-                
+                <!-- <div class="courses_wrapper gsts">
+
+                    <div class="course row gst gst101">
+                        <span>Gst 101</span>
+                        
+                    </div>
+                    <div id="gst102" class="course gst gst102 gstcourse">
+                        <span>Gst 102</span>
+                        <img class="course-selected-indicator" src="icons/radio-button-checked-svgrepo-com.svg" alt="">
+                    </div>
+                    <div id="gst103" class="course gst gst103">
+                        <span id="gst103">Gst 103</span>
+                    </div>
+                    <div class="course gst gst104">
+                        <span>Gst 104</span>
+                    </div>
+                    <div class="course gst 
+                   course-4 
+                    gst107">
+                        <span>Gst 107</span>
+                    </div>
+                </div>
+                <div class="courses_wrapper">
+                    <div class="course gst gst110">
+                        <span>Gst 110</span>
+                    </div>
+                    <div class="course gst gst202">
+                        <span>Gst 202</span>
+                    </div>
+                    <div class="course gst gst204">
+                        <span>Gst 204</span>
+                    </div>
+                    <div class="course gst gst204">
+                        <span>Gst 205</span>
+                    </div>
+                </div> -->
             </div>
             <div class="payment-cta_wrapper">
                 <h3>Cart Total</h3>
