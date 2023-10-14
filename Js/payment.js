@@ -4,7 +4,12 @@ let clickedItem = "";
 let paymentCourses = [];
 
 
+
 function ClickedCourse(event) {
+
+    const cartContent = document.querySelector('.number-of-courses-to-pay-for');
+    const totalCost = document.querySelector('.total-price-of-courses-to-pay-for');
+    const checkout = document.querySelector('.total-cost-of-courses');
     const selected = document.createElement('img');
     clickedItem = event.target.id;
     let contents = selectedCourse.querySelector("#"+clickedItem);
@@ -28,9 +33,9 @@ function ClickedCourse(event) {
     }
 
 
-
-   
-    
+    cartContent.innerText = paymentCourses.length;
+    totalCost.innerText = paymentCourses.length*100;
+    checkout.innerHTML = totalCost.innerText + ".00";
 }
 
 selectedCourse.addEventListener("click", ClickedCourse, false);
