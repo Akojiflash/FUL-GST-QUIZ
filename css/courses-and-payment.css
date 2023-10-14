@@ -26,12 +26,14 @@
     margin-bottom: 0.75rem;
     border-radius: var(--border-radius);
     color: var(--Brown-color);
+    cursor: pointer;
 }
 
-#gstcourse{
+.gstcourse{
     display: flex;
     justify-content: space-between;
 }
+
 .course-selected-indicator{
     width: 24px;
 }
