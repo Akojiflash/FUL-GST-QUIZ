@@ -13,7 +13,7 @@ function loadCourses() {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
                 console.log(xhr.responseText);
-
+                
                 coursesObjData = JSON.parse(xhr.responseText);
                 console.log(coursesObjData);
                 let courseId = "";
@@ -42,12 +42,14 @@ function loadCourses() {
                     course_code.classList.add("gst");
                     course_code.classList.add(courseId);
                     course_code.innerText = courseCode;
-                    
-                    if(coursesObjData['allCourses'].hasOwnProperty(courseId) && coursesObjData['paidCourses'].hasOwnProperty(courseId) ){
-                        course_code.classList.add("greyout");
+                
+                    if(coursesObjData.paidCourses !== undefined && coursesObjData['allCourses'].hasOwnProperty(courseId) && coursesObjData['paidCourses'].hasOwnProperty(courseId)){
+                            course_code.classList.add("greyout");
                     }else{
-                        course_code.setAttribute("id", courseId);
-                    }
+                            course_code.setAttribute("id", courseId);
+                        }
+                    
+                    
                     pageCourse.appendChild(course_code);
                 }
 

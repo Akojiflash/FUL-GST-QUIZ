@@ -19,21 +19,15 @@ if (mysqli_num_rows($result3) > 0) {
 
 $query1 = "SELECT * FROM payment_table WHERE payment_table.unique_id = '{$_SESSION['unique_id']}' AND payment_table.course_id = '{$course}' ";
 $result1 = mysqli_query($conn, $query1);
-if(mysqli_num_rows($result1) > 0 ){
-   $status = 'success';
-
-}else{
-   $status = 'fail';
-}
 
 
 
 
-if ($assoc['trials'] < 0 &&  $status !== 'success' ) {
-   $location = "courseselection";
+
+if ($assoc['trials'] < 0 && mysqli_num_rows($result1) <= 0 ) {
+   // $location = "courseselection";
    $status =  'fail';
-}elseif($status == 'success'){
+}elseif(mysqli_num_rows($result1) > 0 ){
    $status == 'success';
 }
-
 echo  $status;
