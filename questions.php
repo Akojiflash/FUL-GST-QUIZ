@@ -88,6 +88,7 @@
     <script src="Js/nav.js"></script>
     <script src="Js/questions.js"></script>
     <script src = "Js/questionTimer.js"></script>
+    <script src="Js/checkLogin.js"></script>
    
 </body>
 

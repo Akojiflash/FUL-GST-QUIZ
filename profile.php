@@ -63,5 +63,6 @@
     <script src="Js/nav.js"></script>
     <script src="Js/profile.js"></script>
     <script src="Js/main.js"></script>
+    <script src="Js/checkLogin.js"></script>
 </body>
 </html>

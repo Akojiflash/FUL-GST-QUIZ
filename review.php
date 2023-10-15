@@ -98,7 +98,7 @@
 
     <script src="Js/nav.js"></script>
     <script src="Js/review.js"></script>
-    <script src = "#"></script>
+    <script src="Js/checkLogin.js"></script>
    
 </body>
 

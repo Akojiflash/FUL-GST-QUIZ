@@ -51,6 +51,15 @@ if (!empty($fname) && !empty($lname) && !empty($email) && !empty($department) &&
                     $_SESSION['unique_id'] = $row['unique_id']; //usiing this session we use this id in other php pages
                     if(!isset($_SESSION['trials'])){
                         $_SESSION['trials'] = $row['trials']; 
+                        session_regenerate_id();
+                        $user_session_id = session_id();
+                        $query4 = "UPDATE users SET user_session_id = '{$user_session_id}' WHERE unique_id = '{$row['unique_id']}' ";
+                        $sql4 = mysqli_query($conn, $query4);
+                        if( $sql4 && !isset($_SESSION['user_session_id'])){
+                            $_SESSION['user_session_id'] =  $user_session_id;
+                        }
+                       
+                        echo "success";
                     }
                     echo 'success';
                 }

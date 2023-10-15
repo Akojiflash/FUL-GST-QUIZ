@@ -55,6 +55,7 @@ xhr.onload = () => {
            let trial = xhr.responseText;
            if (trial == "fail"){
             window.location.href = "./payment";
+            alert("You have exhausted your trial")
            }
         }
     }else {
@@ -267,8 +268,6 @@ function questionGenerator() {
             }
             if (sqlData['questionStat'] >= numberOfQuestions) {
                 window.location.href = "./winner";
-            }else if(sqlData['trials'] < 0){
-                window.location.href = "./courseselection"
             }
         } else {
             console.error('Error:', xhr.status, xhr.statusText);
@@ -371,7 +370,7 @@ function back() {
                 if (sqlData['questionStat'] >= numberOfQuestions) {
                     window.location.href = "./winner";
                 }else if(sqlData['trials'] < 0){
-                    window.location.href = "./courseselection";
+                    
                 }
             } else {
                 console.error('Error:', xhr.status, xhr.statusText);
@@ -483,8 +482,6 @@ function forward() {
 
                 if (sqlData['questionStat'] >= numberOfQuestions) {
                     window.location.href = "./winner";
-                }else if(sqlData['trials'] < 0){
-                    window.location.href = "./courseselection";
                 }
             } else {
                 console.error('Error:', xhr.status, xhr.statusText);

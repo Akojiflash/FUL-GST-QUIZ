@@ -88,6 +88,7 @@
     <script src="Js/nav.js"></script>
     <script src="Js/payment.js"></script>
     <script src="Js/paymentCourse.js"></script>
+    <script src="Js/checkLogin.js"></script>
 </body>
 
 </html>

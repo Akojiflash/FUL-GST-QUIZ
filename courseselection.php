@@ -55,6 +55,7 @@
 
     <script src="Js/nav.js"></script>
     <script src="Js/courseselection.js"></script>
+    <script src="Js/checkLogin.js"></script>
 </body>
 
 </html>
