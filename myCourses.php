@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Courses</title>
     <link rel="stylesheet" href="css/mycourses.css">
+    <link rel="stylesheet" href="css/courses-and-payment.css">
     <link rel="stylesheet" href="css/score.css">
     <link rel="icon" href="icons/favicon.ico" sizes="32x32" type="image/x-icon">
     <link rel="shortcut icon" href="icons/favicon.ico" sizes="32x32" type="image/x-icon">
@@ -35,7 +36,7 @@ if($_SESSION['trials'] <0){
             </div>
 
             <section class="courses_section">
-                <div class="my_Courses">
+                <!-- <div class="my_Courses">
                     <a href="">
                         <div class="my_course">
                             <span>Gst 101</span>
@@ -46,11 +47,11 @@ if($_SESSION['trials'] <0){
                         <span>Gst 103</span>
                         </div>
                     </a>
-                </div>
+                </div> -->
                 
-                <div class="my_Courses">
+                <!-- <div class="my_Courses">
                     <a href="courseselection.html"><button class="add-more-courses_btn">Add more Courses</button></a>
-                </div>
+                </div> -->
             </section>
             <section class="empty-course_section">
 
@@ -64,6 +65,7 @@ if($_SESSION['trials'] <0){
 
             <script src="Js/nav.js"></script>
             <script src="Js/checkLogin.js"></script>
+            <script src="Js/myCourses.js"></script>
         </body>
         
         </html>
