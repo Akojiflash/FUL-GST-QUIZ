@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 14, 2023 at 08:39 PM
+-- Generation Time: Oct 15, 2023 at 09:32 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -503,6 +503,7 @@ INSERT INTO `quiz_enrollment` (`enrollment_id`, `unique_id`, `course`, `present_
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `unique_id` varchar(32) NOT NULL,
+  `user_session_id` varchar(255) NOT NULL,
   `fname` varchar(255) NOT NULL,
   `lname` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
@@ -519,11 +520,11 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `unique_id`, `fname`, `lname`, `email`, `department`, `level`, `password`, `trials`, `matric_number`, `reg_date`, `profile_img`) VALUES
-(1, '568393429', 'Ayokanmi', 'Akele', 'precimyte1122@gmail.com', 'science education', '300', '$2y$10$do9rpxsG8xlELWPDJGIa.ulE0cx4yfGD53K0UmIfOeNZrHSSsXN6G', '95', 'Edu19sed020', '2023-09-27 08:58:14', 'profile_30.png'),
-(2, '669131707', 'Destiny', 'Joseph', 'akojiflash2000@gmail.com', 'computer science education', '300', '$2y$10$F69SiayPj7vk5URpVpqwN.TTMOCxJM4O.qZDxsjZdEcG8n46B9uZa', '62', 'edu19sed904', '2023-09-27 09:41:11', 'profile_22.png'),
-(3, '119359390', 'Jamiu', 'Jamiu', 'jamiuabdulrafiu2020@gmail.com', 'Biotechnology ', '100', '$2y$10$Auihsz1nqcBwTFDPrzdUG.fD5RUqcZZKWk1.mSCGMjS56keYBYGya', '-1', 'Sci22btc003', '2023-10-07 03:12:46', 'profile_3.png'),
-(4, '319355563', 'David', 'James', 'amehdavid233@gmail.com', 'SCIENCE EDUCATION ', '300', '$2y$10$Fnrr6swk.XLQ3EEOeMP46ufVcsRYK.2Sw3ZNmgMWa3yoo.GAKWFy2', '1', 'edu20sed154', '2023-10-13 11:48:57', 'profile_9.png');
+INSERT INTO `users` (`id`, `unique_id`, `user_session_id`, `fname`, `lname`, `email`, `department`, `level`, `password`, `trials`, `matric_number`, `reg_date`, `profile_img`) VALUES
+(1, '568393429', '', 'Ayokanmi', 'Akele', 'precimyte1122@gmail.com', 'science education', '300', '$2y$10$do9rpxsG8xlELWPDJGIa.ulE0cx4yfGD53K0UmIfOeNZrHSSsXN6G', '95', 'Edu19sed020', '2023-09-27 08:58:14', 'profile_30.png'),
+(2, '669131707', 'buf83a6vrdkckvm94tkv5vh0mt', 'Destiny', 'Joseph', 'akojiflash2000@gmail.com', 'computer science education', '300', '$2y$10$F69SiayPj7vk5URpVpqwN.TTMOCxJM4O.qZDxsjZdEcG8n46B9uZa', '60', 'edu19sed904', '2023-09-27 09:41:11', 'profile_22.png'),
+(3, '119359390', '', 'Jamiu', 'Jamiu', 'jamiuabdulrafiu2020@gmail.com', 'Biotechnology ', '100', '$2y$10$Auihsz1nqcBwTFDPrzdUG.fD5RUqcZZKWk1.mSCGMjS56keYBYGya', '-1', 'Sci22btc003', '2023-10-07 03:12:46', 'profile_3.png'),
+(4, '319355563', '', 'David', 'James', 'amehdavid233@gmail.com', 'SCIENCE EDUCATION ', '300', '$2y$10$Fnrr6swk.XLQ3EEOeMP46ufVcsRYK.2Sw3ZNmgMWa3yoo.GAKWFy2', '1', 'edu20sed154', '2023-10-13 11:48:57', 'profile_9.png');
 
 --
 -- Indexes for dumped tables
