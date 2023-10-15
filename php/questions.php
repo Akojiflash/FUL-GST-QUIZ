@@ -1,7 +1,7 @@
 <?php
 include_once "config.php";
-include "trial.php";
-// session_start();
+
+session_start();
 // Initialize or assign default values to session variables
 
 
@@ -11,8 +11,7 @@ if (!isset($_SESSION['score']['score'])) {
 }
 if (isset($_POST['selectedCourse'])) {
     $_SESSION['courses'] = mysqli_real_escape_string($conn, $_POST['selectedCourse']);
-} else if (isset($_SESSION['courses'])) {
-}
+} 
 
 
 

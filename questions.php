@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <?php include "php/trial.php" ?>
+    
     <?php include "includes/header.php"; 
     if(!isset($_SESSION['courses'])){
         header("courseselection");

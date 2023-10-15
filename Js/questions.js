@@ -44,14 +44,14 @@ number_of_Questions()
 
 
 function trial_expire(){
-    let xhr = new XMLHttpRequest();
+let xhr = new XMLHttpRequest();
 
 xhr.open("POST", "php/trial.php", true);
 
 xhr.onload = () => {
     if(xhr.readyState === XMLHttpRequest.DONE){
         if(xhr.status === 200) {
-            
+           
            let trial = xhr.responseText;
            if (trial == "fail"){
             window.location.href = "./myCourses";
@@ -65,12 +65,12 @@ xhr.onload = () => {
 
 xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 
-// Example user answer (you should replace this with the actual user's answer)
-xhr.send();
+    // Example user answer (you should replace this with the actual user's answer)
+xhr.send( "&selectedCourse=" + encodeURIComponent(selectedCourse));
 
 }
 
-trial_expire();
+
 
 
 
@@ -93,7 +93,7 @@ if (course !== null) {
     window.location.href = "./myCourses";
     console.log("Course parameter is missing in the URL.");
 }
-
+trial_expire();
 //Question and options on the html page
 let question = fullQuestion.querySelector(".question p");
 let option_a = fullQuestion.querySelector("#option1 p");

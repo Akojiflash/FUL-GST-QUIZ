@@ -39,11 +39,8 @@ foreach ($course as $courseId => $courseCode) {
     if ($index == count($course) - 1) {
         $data .= '</div>
     <div class="my_Courses">
-        <a href="courseselection"><button class="add-more-courses_btn">Add more Courses</button></a>
-    </div>
-        
-        
-        ';
+        <a href="payment"><button class="add-more-courses_btn">Add more Courses</button></a>
+    </div>';
 
     }
    

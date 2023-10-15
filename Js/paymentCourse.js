@@ -1,5 +1,5 @@
 const courses = document.querySelector(".courses");
-const courseWrapper = document.querySelectorAll(".courses_wrapper");
+
 let coursesObjData = [];
 let paidCourses = [];
 function loadCourses() {
