@@ -54,7 +54,7 @@ xhr.onload = () => {
             
            let trial = xhr.responseText;
            if (trial == "fail"){
-            window.location.href = "./payment";
+            window.location.href = "./myCourses";
             alert("You have exhausted your trial")
            }
         }

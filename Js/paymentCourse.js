@@ -1,7 +1,7 @@
 const courses = document.querySelector(".courses");
 const courseWrapper = document.querySelectorAll(".courses_wrapper");
 let coursesObjData = [];
-
+let paidCourses = [];
 function loadCourses() {
     
     let xhr = new XMLHttpRequest();
@@ -19,13 +19,13 @@ function loadCourses() {
                 let courseId = "";
                 let courseCode = "";
                 let pageCourse ="";
-                for (courseId in coursesObjData) {
-                    if (coursesObjData.hasOwnProperty(courseId)) {
-                        courseCode = coursesObjData[courseId];
+                for (courseId in coursesObjData['allCourses']) {
+                    if (coursesObjData['allCourses'].hasOwnProperty(courseId)) {
+                        courseCode = coursesObjData['allCourses'][courseId];
                         console.log(courseId, courseCode);
 
                     }
-                    var keys = Object.keys(coursesObjData);
+                    var keys = Object.keys(coursesObjData['allCourses']);
                     var index = keys.indexOf(courseId);
                     console.log(index);
                     if (index % 5== 0) {
@@ -41,8 +41,13 @@ function loadCourses() {
                     course_code.classList.add("row");
                     course_code.classList.add("gst");
                     course_code.classList.add(courseId);
-                    course_code.setAttribute("id", courseId);
                     course_code.innerText = courseCode;
+                    
+                    if(coursesObjData['allCourses'].hasOwnProperty(courseId) && coursesObjData['paidCourses'].hasOwnProperty(courseId) ){
+                        course_code.classList.add("greyout");
+                    }else{
+                        course_code.setAttribute("id", courseId);
+                    }
                     pageCourse.appendChild(course_code);
                 }
 
@@ -63,5 +68,4 @@ function loadCourses() {
 }
 
 loadCourses();
-
 

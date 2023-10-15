@@ -1,7 +1,20 @@
 <?php
 
 include_once "config.php";
+session_start();
+//All paid courses
+$query1 = "SELECT payment_table.unique_id, payment_table.course_id, courses.course_code
+FROM courses
+INNER JOIN payment_table ON courses.course_id = payment_table.course_id
+WHERE payment_table.unique_id = '{$_SESSION['unique_id']}'";
+$result1 = mysqli_query($conn, $query1);
 
+if ($result1 && mysqli_num_rows($result1) > 0) {
+
+    while ($row1 = mysqli_fetch_assoc($result1)) {
+        $course['paidCourses'][$row1['course_id']] = $row1['course_code'];
+    }
+}
 
 
 // Fetch the courses from the database
@@ -11,44 +24,8 @@ $result = mysqli_query($conn, $query);
 if ($result && mysqli_num_rows($result) > 0) {
 
     while ($row = mysqli_fetch_assoc($result)) {
-        $course[$row['course_id']] = $row['course_code'];
+        $course['allCourses'][$row['course_id']] = $row['course_code'];
     }
 }
-
-//displaes the available courses for the user to buy
-// foreach ($course as $courseId => $courseCode) {
-//     $index = array_search($courseId, array_keys($course));
-//     if ($index == 0) {
-//         $data .= "<div class='courses_wrapper'>";
-//     }
-//     $data .= '      <div id="'.$courseId.'" class="course gst gstcourse '.$courseId.'">
-//                         <span id="'.$courseId.'" >' . $courseCode . '</span>
-//                         <img id="'.$courseId.'" class="course-selected-indicator" src="icons/radio-button-checked-svgrepo-com.svg" alt="">
-//                     </div>';
-//     if (($index + 1) % 5 == 0 && $index > 0 && $index != count($course) - 1) {
-//         $data .= "</div><div class='courses_wrapper'>";
-//     }
-
-//     if ($index == count($course) - 1) {
-//         $data .= '</div>
-
-//         ';
-//     }
-   
-// }
-
-// $data .= '
-// <script >
-// const selectedCourse = document.querySelector(".courses");
-// const testVar = document.querySelector(".gst_101");
-
-// testVar.addEventListener("click", ()=>{
-//     console.log(test.textContent);
-// });
-
-
-
-
-// </script>';
 
 echo json_encode( $course);
