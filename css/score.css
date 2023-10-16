@@ -209,6 +209,7 @@ main > h1{
     padding: .7rem 1.2rem;
     width: fit-content;
     border-radius: 12px;
+    text-align: center;
 }
 
 .course_bought_alert p{

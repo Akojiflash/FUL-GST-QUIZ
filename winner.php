@@ -88,7 +88,10 @@ if(!isset($_SESSION['quize_completed'])){
     </main>
 
 
-
+    <div role="alert" class="course_bought_alert">
+                <img src="icons/warning-svgrepo-com.png" alt="">
+                <p>You have exhausted your trials</p>
+        </div>
     <script src="Js/nav.js"></script>
     <script src = "Js/winner.js"></script>
     <script src="Js/checkLogin.js"></script>

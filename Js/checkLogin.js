@@ -1,4 +1,5 @@
 
+const time = 10000;
 function checkLogin(){
     let xhr = new XMLHttpRequest();
     xhr.open("POST", "php/checkLogin.php", true);
@@ -10,7 +11,9 @@ function checkLogin(){
                 console.log(sqlData);
                 if(sqlData == 'logout'){
                     window.location.href = "php/logout";
-                    alert("You are about to be signed out of your account");
+                   alert("You are about to be signed out of your account");
+                    
+                                
                 }
 
 
@@ -29,4 +32,12 @@ function checkLogin(){
     xhr.send();
 }
 
-setInterval(checkLogin, 10000);
+setInterval(checkLogin, time);
+
+
+function errorMesg(input) {
+    const errorMsg = document.querySelector(".course_bought_alert");
+    errorMsg.style.display = "flex";
+    errorMsg.style.position = "absolute";
+    errorMsg.querySelector('p').innerText = input;
+}

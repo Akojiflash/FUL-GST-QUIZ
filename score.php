@@ -33,7 +33,10 @@ header("Cache-Control: private");
         </section>
     </main>
     
-
+    <div role="alert" class="course_bought_alert">
+                <img src="icons/warning-svgrepo-com.png" alt="">
+                <p>You have exhausted your trials</p>
+    </div>
 
     <script src="Js/nav.js"></script>
     <script src="Js/score.js"></script>

@@ -62,7 +62,10 @@ if($_SESSION['trials'] <0){
             <h4>You have not added any course</h4>
             <a href="payment"><button class="add-more-courses_btn">Add Courses</button></a>
             </section>
-
+            <div role="alert" class="course_bought_alert">
+                <img src="icons/warning-svgrepo-com.png" alt="">
+                <p>You have exhausted your trials</p>
+            </div>
 
            
 
