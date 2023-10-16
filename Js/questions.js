@@ -55,13 +55,21 @@ xhr.onload = () => {
            let trial = xhr.responseText;
            if (trial == "fail"){
             window.location.href = "./myCourses";
-            alert("You have exhausted your trial")
+            setInterval(errorMesg("You have exhausted your trial"), 5000);
+            
            }
         }
     }else {
         console.error('Error:', xhr.status, xhr.statusText);
     }
 };
+
+function errorMesg(input) {
+    const errorMsg = document.querySelector(".course_bought_alert");
+    errorMsg.style.display = "flex";
+    errorMsg.style.position = "absolute";
+    errorMsg.querySelector('p').innerText = input;
+}
 
 xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 

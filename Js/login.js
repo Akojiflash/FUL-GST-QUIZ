@@ -20,10 +20,10 @@ loginBtn.onclick = ()=>{
                 
                 if(data === 'success'){
                     location.href = './myCourses';
+                    errorMsg.style.backgound
                 }else{
-                    errorMsg.style.display = "flex";
-                    errorMsg.style.position = "absolute";
-                    errorText.textContent = data;
+
+                    setTimeout(errorMesg(data), 3000);
                     // alert(data);
                 }
                 
@@ -41,4 +41,12 @@ loginBtn.onclick = ()=>{
     xhr.onerror = () => {
         console.error('Request failed');
     };
+}
+
+
+function errorMesg(input){
+    const errorMsg = document.querySelector(".incorrect-password");
+    errorMsg.style.display = "flex";
+    errorMsg.style.position = "absolute";
+    errorMsg.querySelector('p').innerText = input;
 }

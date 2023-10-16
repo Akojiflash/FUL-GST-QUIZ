@@ -13,14 +13,14 @@
 </head>
 
 <body>
-    
-    <?php include "includes/header.php"; 
-    if(!isset($_SESSION['courses'])){
+
+    <?php include "includes/header.php";
+    if (!isset($_SESSION['courses'])) {
         header("courseselection");
     }
 
     ?>
-   
+
     <main class="container questions__main">
 
         <div class="row time-and-point_wrapper">
@@ -44,7 +44,7 @@
 
         <section>
             <h1 class="selected_course"></h1>
-                
+
             <div class="question__board">
                 <div class="row question-bar">
                     <div>
@@ -77,19 +77,24 @@
                             <img src="" alt="">
                         </div>
                     </div>
-                </div> 
+                </div>
             </div>
         </section>
 
     </main>
 
+    <div role="alert" class="course_bought_alert">
+        <img src="icons/warning-svgrepo-com.png" alt="">
+        <p></p>
+    </div>
+
 
 
     <script src="Js/nav.js"></script>
     <script src="Js/questions.js"></script>
-    <script src = "Js/questionTimer.js"></script>
+    <script src="Js/questionTimer.js"></script>
     <script src="Js/checkLogin.js"></script>
-   
+
 </body>
 
 </html>

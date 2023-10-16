@@ -18,7 +18,7 @@ createAccount.onclick = ()=>{
             if(xhr.status === 200){
                 let data = xhr.response;
                 if(data === 'success'){
-                    location.href = "./deck";
+                    windows.location.href = "./deck";
                 }else{
                     errorMsg.style.display = "flex";
                     errorText.textContent = data;

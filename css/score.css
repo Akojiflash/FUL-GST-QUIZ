@@ -193,6 +193,29 @@ main > h1{
     border-radius: var(--border-radius);
     cursor: pointer;
 }
+
+/* ALERT FOR COURSES NOT PAID FOR YET */
+
+.course_bought_alert{
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    background: #F27A6D;
+    position: absolute;
+    z-index: 19000;
+    top: 6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: .7rem 1.2rem;
+    width: fit-content;
+    border-radius: 12px;
+}
+
+.course_bought_alert p{
+    color: #fff;
+    margin-left: .3rem;
+}
+
 @media (max-width: 800px){
     .slide-nav-ul{
         top: 5rem;

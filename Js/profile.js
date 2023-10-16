@@ -19,9 +19,13 @@ saveBtn.onclick = ()=>{
                 let data = xhr.response;
                 console.log(data);
                 if(data === "success"){
-                    alert("Change successful")
+
+                    setTimeout(errorMesg(data), 3000);
+
                 }else{
-                    alert(data)
+                    
+                    setTimeout(errorMesg(data), 3000);
+                    
                 }
             }
         }
@@ -37,3 +41,10 @@ discardBtn.onclick = ()=>{
 }
 
 
+function errorMesg(input) {
+    const errorMsg = document.querySelector(".course_bought_alert");
+    errorMsg.style.display = "flex";
+    errorMsg.style.position = "absolute";
+
+    errorMsg.querySelector('p').innerText = input;
+}

@@ -24,7 +24,10 @@
     border-radius: var(--border-radius);
     color: var(--Brown-color);
 }
-
+.courseselection{
+    text-decoration: underline;
+    color: blue;
+}
 .add-more-courses_btn{
     width: 100%;
     border-radius: var(--border-radius);
@@ -36,6 +39,8 @@
     font-weight: bold;
     cursor: pointer;
 }
+
+
 
 @media (max-width: 450px) {
     .my_Courses,

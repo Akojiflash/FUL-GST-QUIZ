@@ -32,7 +32,7 @@ if($_SESSION['trials'] <0){
     <main class="container mycourses__container">
             <div>
                 <h3>Select a course to start quiz</h3>
-                <p class="trials-left-text">You still have (<span class="no-of-trials-left"><?php echo   $trials; ?></span>) trials left click <a href="courseselection">here</a> to proceed to trials</p>
+                <p class="trials-left-text">You still have (<span class="no-of-trials-left"><?php echo   $trials; ?></span>) trials left click <a href="courseselection" class="courseselection">here</a> to proceed to trials</p>
             </div>
 
             <section class="courses_section">
@@ -62,6 +62,9 @@ if($_SESSION['trials'] <0){
             <h4>You have not added any course</h4>
             <a href="payment"><button class="add-more-courses_btn">Add Courses</button></a>
             </section>
+
+
+           
 
             <script src="Js/nav.js"></script>
             <script src="Js/checkLogin.js"></script>

@@ -61,7 +61,7 @@ if (!empty($fname) && !empty($lname) && !empty($email) && !empty($department) &&
                        
                         echo "success";
                     }
-                    echo 'success';
+                   
                 }
             } else {
                 echo "Something went wrong";
