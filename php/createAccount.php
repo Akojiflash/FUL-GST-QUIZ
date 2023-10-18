@@ -27,7 +27,7 @@ if (!empty($fname) && !empty($lname) && !empty($email) && !empty($department) &&
             echo "Account already exists!";
         } elseif (strlen($password) < 8) {
             echo "Length of password should be at least 8 characters!";
-        } elseif (strlen($matric) < 11 || strlen($matric) > 11 ) {
+        } elseif (strlen($matric) < 11 || strlen($matric) > 11) {
             echo "Length of matric number should be 7 characters!";
         } else {
             //Select random profile image for user
@@ -49,25 +49,24 @@ if (!empty($fname) && !empty($lname) && !empty($email) && !empty($department) &&
                 if (mysqli_num_rows($sql3) > 0) {
                     $row = mysqli_fetch_assoc($sql3);
                     $_SESSION['unique_id'] = $row['unique_id']; //usiing this session we use this id in other php pages
-                    if(!isset($_SESSION['trials'])){
-                        $_SESSION['trials'] = $row['trials']; 
-                        session_regenerate_id();
-                        $user_session_id = session_id();
-                        $query4 = "UPDATE users SET user_session_id = '{$user_session_id}' WHERE unique_id = '{$row['unique_id']}' ";
-                        $sql4 = mysqli_query($conn, $query4);
-                        if( $sql4 && !isset($_SESSION['user_session_id'])){
-                            $_SESSION['user_session_id'] =  $user_session_id;
-                        }
-                       
-                        echo "success";
+                    $_SESSION['email'] = $row['email'];
+                    if (!isset($_SESSION['trials'])) {
+                        $_SESSION['trials'] = $row['trials'];
                     }
-                   
+                    session_regenerate_id();
+                    $user_session_id = session_id();
+                    $query4 = "UPDATE users SET user_session_id = '{$user_session_id}' WHERE unique_id = '{$row['unique_id']}' ";
+                    $sql4 = mysqli_query($conn, $query4);
+                    if ($sql4 && !isset($_SESSION['user_session_id'])) {
+                        $_SESSION['user_session_id'] =  $user_session_id;
+                    }
+                    echo "success";
                 }
             } else {
                 echo "Something went wrong";
             }
         }
     }
-}else{
+} else {
     echo "All input fields are required";
 }

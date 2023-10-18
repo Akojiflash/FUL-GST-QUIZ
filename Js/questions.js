@@ -26,7 +26,7 @@ xhr.onload = () => {
     if(xhr.readyState === XMLHttpRequest.DONE){
         if(xhr.status === 200) {
             
-            numberOfQuestions = xhr.responseText;
+            numberOfQuestions = parseInt(xhr.responseText) ;
            
         }
     }else {

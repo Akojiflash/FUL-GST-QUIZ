@@ -83,7 +83,7 @@
     <div role="alert" class="course_bought_alert">
                 <img src="icons/warning-svgrepo-com.png" alt="">
                 <p>You have exhausted your trials</p>
-            </div>
+    </div>
 
 
 

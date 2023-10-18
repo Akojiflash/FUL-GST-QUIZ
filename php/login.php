@@ -26,6 +26,7 @@ if (!empty($email) && !empty($password)) {
             $sql2 = mysqli_query($conn, $query2);
             if($sql2 && !isset($_SESSION['user_session_id'])){
                 $_SESSION['user_session_id'] =  $user_session_id;
+                $_SESSION['email'] = $row['email'];
             }
             
             echo "success";

@@ -129,6 +129,7 @@
     border: none;
     background: var(--Orange-color);
     color: var(--white-color);
+    cursor: pointer;
 }
 
 .course.gst,
