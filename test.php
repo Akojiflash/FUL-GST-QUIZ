@@ -8,3 +8,5 @@ print_r($_SESSION['selectedCourses']);
 echo $_SESSION['unique_id'];
 
 echo $_SESSION['email'];
+
+echo $_SESSION['phone'];

@@ -32,16 +32,17 @@
                     <?php ?>
                     <div class="input_container input_container2">
                         <input type="email"  placeholder = "E-mail" value="<?php echo $row['email']; ?>" readonly>
+                        <input type="tel"  placeholder = "Phone number" value="<?php echo $row['phone_number']; ?>" name="phone" pattern="[0-9]{11}" maxlength="12">
                          <!-- ========== password input with show hide button ========== -->
                          <div class="password-input">
-                            <input class="Password" name="password" type="password" placeholder="Enter current password" required>
+                            <input class="Password" name="password" type="password" placeholder="Enter current password">
                             <div class="show-hide-password" data-toggle = 'false'>
 
                             </div>
                         </div>
                         <!-- ========== password input with show hide button ========== -->
                         <div class="password-input">
-                            <input class="Password" name="re-password" type="password" placeholder="New password" required>
+                            <input class="Password" name="re-password" type="password" placeholder="New password">
                             <div class="show-hide-password" data-toggle = 'false'>
 
                             </div>

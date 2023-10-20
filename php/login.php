@@ -27,6 +27,7 @@ if (!empty($email) && !empty($password)) {
             if($sql2 && !isset($_SESSION['user_session_id'])){
                 $_SESSION['user_session_id'] =  $user_session_id;
                 $_SESSION['email'] = $row['email'];
+                $_SESSION['phone'] = $row['phone_number'];
             }
             
             echo "success";

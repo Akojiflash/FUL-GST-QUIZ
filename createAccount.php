@@ -45,6 +45,7 @@
                 <input type="text" name="fname" placeholder="First Name" size="35" required>
                 <input type="text" name="lname" placeholder="Last Name" size="35" required>
                 <input type="email" name="email" placeholder="Email" size="35" required>
+                <input type="tel" name="phone" placeholder="Phone number" pattern="[0-9]{11}" maxlength="12" size="35" required>
                 <input type="text" name="matric" placeholder="Matriculation number" size="35" required>
                 <input type="text" name="department" placeholder="Department" size="35" required>
                 <select name="level" required>

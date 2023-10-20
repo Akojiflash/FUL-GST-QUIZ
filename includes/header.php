@@ -27,6 +27,8 @@ if (!isset($_SESSION['unique_id'])) {
     if($_SESSION['trials'] <0){
         $trials = 0;
     }
+
+    
     
     ?>
     
