@@ -72,6 +72,7 @@ if (!empty($fname) && !empty($lname) && !empty($email) && !empty($department) &&
                     $_SESSION['unique_id'] = $row['unique_id']; //usiing this session we use this id in other php pages
                     $_SESSION['email'] = $row['email'];
                     $_SESSION['phone'] = $row['phone_number'];
+                    $_SESSION['name'] = $row['fname'] . " " . $row['lname'];
                     if (!isset($_SESSION['trials'])) {
                         $_SESSION['trials'] = $row['trials'];
                     }
