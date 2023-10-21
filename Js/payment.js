@@ -56,7 +56,7 @@ function pay(){
             if(xhr.status === 200){
                 let sentData = (xhr.responseText);
                 if(sentData = "success" && paymentCourses.length >0 ){
-                    window.location.href = "./test.php"
+                    window.location.href = "./checkout"
                 }else{
                     errorMesg("You have not selected any course")
                 }
