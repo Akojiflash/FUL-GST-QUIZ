@@ -1,4 +1,4 @@
 <?php
-$NumberOfQuestions = 30;
+$NumberOfQuestions = 29;
 
 echo $NumberOfQuestions;
