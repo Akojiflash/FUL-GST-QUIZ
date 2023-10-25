@@ -199,12 +199,7 @@ function ClickedAns(event) {
                     optionCimage.src = "";
                     optionDimage.src = "";
 
-                    if (sqlData['questionStat'] >= numberOfQuestions) {
-                        window.location.href = "./winner";
-                    }
-                    // else if(sqlData['trials'] < 0){
-                    //     window.location.href = "./courseselection"
-                    // }
+                  
                 } else {
                     console.error('Error:', xhr.status, xhr.statusText);
                 }
@@ -271,12 +266,16 @@ function questionGenerator() {
                 presentCount = sqlData["questionStat"] - 1;
                 currentCount = sqlData["questionStat"] - 1;
                 console.log(presentCount);
+
+                
+                if (sqlData['questionStat'] >= numberOfQuestions) {
+                    location.href = "./winner";
+                }
+
             } else {
                 back();
             }
-            if (sqlData['questionStat'] >= numberOfQuestions) {
-                window.location.href = "./winner";
-            }
+            
         } else {
             console.error('Error:', xhr.status, xhr.statusText);
         }
@@ -375,11 +374,7 @@ function back() {
 
                 console.log(prevsqlData["questionStat"]);
 
-                if (sqlData['questionStat'] >= numberOfQuestions) {
-                    window.location.href = "./winner";
-                }else if(sqlData['trials'] < 0){
-                    
-                }
+                
             } else {
                 console.error('Error:', xhr.status, xhr.statusText);
             }
@@ -488,9 +483,7 @@ function forward() {
 
                 console.log(prevsqlData["questionStat"]);
 
-                if (sqlData['questionStat'] >= numberOfQuestions) {
-                    window.location.href = "./winner";
-                }
+                
             } else {
                 console.error('Error:', xhr.status, xhr.statusText);
             }
