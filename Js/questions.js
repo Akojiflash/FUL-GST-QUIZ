@@ -1,5 +1,4 @@
 
-
 const fullQuestion = document.querySelector(".question_wrapper");
 let answer = document.querySelector(".options"); // Assuming "answer" is an array of elements with the class "option"
 
@@ -11,13 +10,13 @@ let frwdBtn = document.querySelector('#forward');
 let course_code = document.querySelector(".selected_course");
 let currenQuestionNumber = document.querySelector(".current-question_number");
 let displayedScore = document.querySelector(".Points span")
-var numberOfQuestions =0;
+
 let presentCount = 0;
 
 let currentCount = 0;
 
-//Number of questions to answer
-function number_of_Questions(){
+//Checks if you have finished the stipulated number of question
+function quizStatistic(){
     let xhr = new XMLHttpRequest();
 
 xhr.open("POST", "php/questionNumber.php", true);
@@ -26,7 +25,12 @@ xhr.onload = () => {
     if(xhr.readyState === XMLHttpRequest.DONE){
         if(xhr.status === 200) {
             
-            numberOfQuestions = parseInt(xhr.responseText) ;
+            let quizStat = xhr.responseText;
+            
+            console.log("Apear here:"+quizStat);
+            if ( quizStat == "completed") {
+                location.href = "./winner";
+            }
            
         }
     }else {
@@ -40,7 +44,7 @@ xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 xhr.send();
 
 }
-number_of_Questions()
+quizStatistic();
 
 
 function trial_expire(){
@@ -122,6 +126,7 @@ let correctAnsContent = "";
 let clickedItem = "";
 
 function ClickedAns(event) {
+    
     clickedItem = "#" + event.target.id;
 
     let option = answer.querySelector(clickedItem);
@@ -158,6 +163,7 @@ function ClickedAns(event) {
     event.stopPropagation();
 
     setTimeout(() => {
+       
         answer.addEventListener("click", ClickedAns, false)
 
         let xhr = new XMLHttpRequest();
@@ -170,6 +176,7 @@ function ClickedAns(event) {
                     console.log(xhr.responseText);
                     sqlData = JSON.parse(xhr.responseText);
                     // Update the UI with the new question data
+                    
                     question.textContent = sqlData['question'];
                     option_a.textContent = sqlData['option_a'];
                     option_b.textContent = sqlData['option_b'];
@@ -187,8 +194,8 @@ function ClickedAns(event) {
                         displayedScore.textContent = "000"
                     }
 
-
-
+                   
+                   
                     // console.log(sqlData['questionID'].lastIndexOf(sqlData['id']) + 1);
                     currenQuestionNumber.textContent = sqlData["questionStat"] + 1;
                     presentCount = sqlData["questionStat"] - 1;
@@ -198,7 +205,7 @@ function ClickedAns(event) {
                     optionBimage.src = "";
                     optionCimage.src = "";
                     optionDimage.src = "";
-
+                    quizStatistic();
                   
                 } else {
                     console.error('Error:', xhr.status, xhr.statusText);
@@ -221,6 +228,7 @@ answer.addEventListener("click", ClickedAns, false);
 
 
 function questionGenerator() {
+  
     // Perform any necessary cleanup or UI updates here
 
     // Send an AJAX request to retrieve the next question from the server
@@ -237,7 +245,7 @@ function questionGenerator() {
                 // let option = answer.querySelector(clickedItem);
                 // let optionContent = option.querySelector("p");
                 // userAns = optionContent.textContent;
-
+              
                 optionAimage.src = "";
                 optionBimage.src = "";
                 optionCimage.src = "";
@@ -260,17 +268,15 @@ function questionGenerator() {
                     displayedScore.textContent = "000"
                 }
 
-
+                
                 // console.log(sqlData['questionID'].lastIndexOf(sqlData['id']) + 1);
                 currenQuestionNumber.textContent = sqlData["questionStat"] + 1;
                 presentCount = sqlData["questionStat"] - 1;
                 currentCount = sqlData["questionStat"] - 1;
-                console.log(presentCount);
+             
 
                 
-                if (sqlData['questionStat'] >= numberOfQuestions) {
-                    location.href = "./winner";
-                }
+               
 
             } else {
                 back();
@@ -372,7 +378,7 @@ function back() {
 
                 currenQuestionNumber.textContent = prevsqlData["QuestionNo"] + 1;
 
-                console.log(prevsqlData["questionStat"]);
+      
 
                 
             } else {

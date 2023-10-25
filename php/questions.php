@@ -1,5 +1,6 @@
 <?php
 include_once "config.php";
+// include "questionNumber.php";
 
 session_start();
 // Initialize or assign default values to session variables
@@ -66,9 +67,10 @@ if (!isset($_SESSION['AllQuestions'])) {
 }
 
 //Check if user has completed the quiz
-if(!isset($_SESSION['quize_completed']) && count($_SESSION['AllQuestions']['AllQuestions']) >30){
+if(!isset($_SESSION['quize_completed']) && count($_SESSION['AllQuestions']['AllQuestions']) >$_SESSION['totalNumberOfQuestions']){
     
         $_SESSION['quize_completed'] = true;
+        $QuestionStat = ['stat' => $_SESSION['quize_completed'] ];
     echo $_SESSION['quize_completed'];
 }
 
@@ -230,8 +232,9 @@ function QuestionOutPut()
             //     $_SESSION['row2'] = array_merge($_SESSION['row2'], $prevQuestNo);
             // }
             if (isset($_SESSION['AllQuestions'])) {
-
+                // global $QuestionStat;
                 $_SESSION['row2'] = array_merge($_SESSION['row2'], $_SESSION['AllQuestions']);
+                // $_SESSION['row2'] = array_merge($_SESSION['row2'], $QuestionStat);
             }
             if (isset($_SESSION['trials'])) {
 
