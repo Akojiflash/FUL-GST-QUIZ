@@ -268,7 +268,7 @@ function questionGenerator() {
                 console.log(presentCount);
 
                 
-                if (sqlData['questionStat'] >= numberOfQuestions-1) {
+                if (sqlData['questionStat'] >= numberOfQuestions) {
                     location.href = "./winner";
                 }
 
