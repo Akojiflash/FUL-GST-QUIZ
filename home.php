@@ -122,16 +122,32 @@
                 <div class="Testimonies-article__wrapper swiper-wrapper">
                 <article class="row swiper-slide">
                         <div class="Students-testimonies__img-container">
-                            <img class="Students-testimonies__img" src="images/Rectangle 12.png" alt="">
+                            <img class="Students-testimonies__img" src="images/Damola.jpg" alt="">
                         </div>
                         <div class="Testimonies-article_text-container">
-                            <h3>Rosco</h3>
-                            <p class="department">Computer Science Edu. (300 Level)</p>
+                            <h3>Damola Isreal</h3>
+                            <p class="department">Bio Technology (100 Level)</p>
                             <p>
-                                I went to the New Friends list on the app and saw something I wasn't prepared for:
-                                @anal.a*********
-                                I learned that you don't know what you don't know. Your outstanding kid might not fully
-                                understand the possible ramifications of seemingly innocent actions on social media."
+                            "Your GST quiz site was an absolute lifesaver as I prepared for
+                             my GST exams. The quizzes provided an excellent opportunity to
+                              review and reinforce my understanding of GST concepts. It was an
+                               essential part of my study routine, Thanks to your site, I fell confident and well-prepared!"
+                            </p>
+                        </div>
+                    </article>
+                <article class="row swiper-slide">
+                        <div class="Students-testimonies__img-container">
+                            <img class="Students-testimonies__img" src="images/Ruth.jpg" alt="">
+                        </div>
+                        <div class="Testimonies-article_text-container">
+                            <h3>Ruth Opeyemi</h3>
+                            <p class="department">Bio Chemistry (200 Level)</p>
+                            <p>
+                            "Your GST quiz site was a game-changer in my exam preparation. 
+                            The quizzes were not only challenging but also highly educational. 
+                            The quizzes were an excellent way to self-assess and ensure 
+                            I was on track for my upcoming GST exams.
+                             and I owe a big thank you to your site!"
                             </p>
                         </div>
                     </article>                   
@@ -144,10 +160,10 @@
                             <h3>Yusuf Asmau</h3>
                             <p class="department">Bio Technology (100 Level)</p>
                             <p>
-                                I went to the New Friends list on the app and saw something I wasn't prepared for:
-                                @anal.a*********
-                                I learned that you don't know what you don't know. Your outstanding kid might not fully
-                                understand the possible ramifications of seemingly innocent actions on social media."
+                            "Studying GST for my upcoming exams has been a breeze with your quiz site. 
+                            The quizzes are not only comprehensive but also tailored to the exam format. 
+                            They've made my study sessions more effective and productive. 
+                            I'm looking forward to acing the GST exams with your help!"
                             </p>
                         </div>
                     </article>
@@ -159,10 +175,16 @@
                             <h3>Aikoye Arome</h3>
                             <p class="department">Mathematics Edu. (100 Level)</p>
                             <p>
-                                I went to the New Friends list on the app and saw something I wasn't prepared for:
-                                @anal.a*********
-                                I learned that you don't know what you don't know. Your outstanding kid might not fully
-                                understand the possible ramifications of seemingly innocent actions on social media."
+                            "Preparing for my GST exams has been much more manageable 
+                            with your quiz site. The diversity of topics and the clear 
+                            explanations have made it a go-to study tool. The questions are thought-provoking 
+                            and have deepened my understanding of GST concepts,  Your site has made a significant
+                            difference in my exam readiness."
+
+                            <!-- "Your GST quiz site has been a lifeline as I prepare for my upcoming exams. 
+                            The questions are thought-provoking and have deepened my understanding of GST concepts. 
+                            Your site has made a significant 
+                            difference in my exam readiness, and I'm thankful for that." -->
                             </p>
                         </div>
                     </article>
@@ -174,26 +196,10 @@
                             <h3>Treasure</h3>
                             <p class="department">Bio Technology (100 Level)</p>
                             <p>
-                                I went to the New Friends list on the app and saw something I wasn't prepared for:
-                                @anal.a*********
-                                I learned that you don't know what you don't know. Your outstanding kid might not fully
-                                understand the possible ramifications of seemingly innocent actions on social media."
-                            </p>
-                        </div>
-                    </article>
-
-                    <article class="row swiper-slide">
-                        <div class="Students-testimonies__img-container">
-                            <img class="Students-testimonies__img" src="images/Damola.jpg" alt="">
-                        </div>
-                        <div class="Testimonies-article_text-container">
-                            <h3>Damola Isreal</h3>
-                            <p class="department">Bio Technology (100 Level)</p>
-                            <p>
-                                I went to the New Friends list on the app and saw something I wasn't prepared for:
-                                @anal.a*********
-                                I learned that you don't know what you don't know. Your outstanding kid might not fully
-                                understand the possible ramifications of seemingly innocent actions on social media."
+                            "Your GST quiz site is an absolute treasure for anyone 
+                            gearing up for their GST exams. The quizzes provide a structured 
+                            approach to studying and have been an indispensable part of my exam preparation. 
+                            They've given me the confidence I need to succeed in my upcoming exams."
                             </p>
                         </div>
                     </article>
