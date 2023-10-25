@@ -120,13 +120,29 @@
             <h2>Students Testimonies</h2>
             <div class="swiper mySwiper">
                 <div class="Testimonies-article__wrapper swiper-wrapper">
-                    <article class="row swiper-slide">
+                <article class="row swiper-slide">
                         <div class="Students-testimonies__img-container">
                             <img class="Students-testimonies__img" src="images/Rectangle 12.png" alt="">
                         </div>
                         <div class="Testimonies-article_text-container">
-                            <h3>John Smith</h3>
-                            <p class="department">Bio Chemistry 100 Level</p>
+                            <h3>Rosco</h3>
+                            <p class="department">Computer Science Edu. (300 Level)</p>
+                            <p>
+                                I went to the New Friends list on the app and saw something I wasn't prepared for:
+                                @anal.a*********
+                                I learned that you don't know what you don't know. Your outstanding kid might not fully
+                                understand the possible ramifications of seemingly innocent actions on social media."
+                            </p>
+                        </div>
+                    </article>                   
+                    
+                    <article class="row swiper-slide">
+                        <div class="Students-testimonies__img-container">
+                            <img class="Students-testimonies__img" src="images/Asmau.jpg" alt="">
+                        </div>
+                        <div class="Testimonies-article_text-container">
+                            <h3>Yusuf Asmau</h3>
+                            <p class="department">Bio Technology (100 Level)</p>
                             <p>
                                 I went to the New Friends list on the app and saw something I wasn't prepared for:
                                 @anal.a*********
@@ -137,11 +153,11 @@
                     </article>
                     <article class="row swiper-slide">
                         <div class="Students-testimonies__img-container">
-                            <img class="Students-testimonies__img" src="images/Rectangle 12.png" alt="">
+                            <img class="Students-testimonies__img" src="images/Arome.jpg" alt="">
                         </div>
                         <div class="Testimonies-article_text-container">
-                            <h3>John Smith</h3>
-                            <p class="department">Bio Chemistry 100 Level</p>
+                            <h3>Aikoye Arome</h3>
+                            <p class="department">Mathematics Edu. (100 Level)</p>
                             <p>
                                 I went to the New Friends list on the app and saw something I wasn't prepared for:
                                 @anal.a*********
@@ -152,11 +168,11 @@
                     </article>
                     <article class="row swiper-slide">
                         <div class="Students-testimonies__img-container">
-                            <img class="Students-testimonies__img" src="images/Rectangle 12.png" alt="">
+                            <img class="Students-testimonies__img" src="images/Treasure.jpg" alt="">
                         </div>
                         <div class="Testimonies-article_text-container">
-                            <h3>John Smith</h3>
-                            <p class="department">Bio Chemistry 100 Level</p>
+                            <h3>Treasure</h3>
+                            <p class="department">Bio Technology (100 Level)</p>
                             <p>
                                 I went to the New Friends list on the app and saw something I wasn't prepared for:
                                 @anal.a*********
@@ -165,13 +181,14 @@
                             </p>
                         </div>
                     </article>
+
                     <article class="row swiper-slide">
                         <div class="Students-testimonies__img-container">
-                            <img class="Students-testimonies__img" src="images/Rectangle 12.png" alt="">
+                            <img class="Students-testimonies__img" src="images/Damola.jpg" alt="">
                         </div>
                         <div class="Testimonies-article_text-container">
-                            <h3>John Smith</h3>
-                            <p class="department">Bio Chemistry 100 Level</p>
+                            <h3>Damola Isreal</h3>
+                            <p class="department">Bio Technology (100 Level)</p>
                             <p>
                                 I went to the New Friends list on the app and saw something I wasn't prepared for:
                                 @anal.a*********
@@ -200,8 +217,8 @@
                             <img class="Students-testimonies__img" src="images/Rectangle 12.png" alt="">
                         </div>
                         <div class="Testimonies-article_text-container">
-                            <h3>John Smith</h3>
-                            <p class="department">Bio Chemistry 100 Level</p>
+                            <h3>Joseph Olarewaju Destiny</h3>
+                            <p class="department">Computer Science Education</p>
                             <p>
                                 I went to the New Friends list on the app and saw something I wasn't prepared for:
                                 @anal.a*********
@@ -215,8 +232,8 @@
                             <img class="Students-testimonies__img" src="images/Rectangle 12.png" alt="">
                         </div>
                         <div class="Testimonies-article_text-container">
-                            <h3>John Smith</h3>
-                            <p class="department">Bio Chemistry 100 Level</p>
+                            <h3>Akele Dolly_Pee</h3>
+                            <p class="department">Computer Science Education</p>
                             <p>
                                 I went to the New Friends list on the app and saw something I wasn't prepared for:
                                 @anal.a*********
@@ -230,8 +247,8 @@
                             <img class="Students-testimonies__img" src="images/Rectangle 12.png" alt="">
                         </div>
                         <div class="Testimonies-article_text-container">
-                            <h3>John Smith</h3>
-                            <p class="department">Bio Chemistry 100 Level</p>
+                            <h3>Ameh David</h3>
+                            <p class="department">Computer Science Education</p>
                             <p>
                                 I went to the New Friends list on the app and saw something I wasn't prepared for:
                                 @anal.a*********
@@ -240,7 +257,7 @@
                             </p>
                         </div>
                     </article>
-                    <article class="row swiper-slide">
+                    <!-- <article class="row swiper-slide">
                         <div class="Students-testimonies__img-container">
                             <img class="Students-testimonies__img" src="images/Rectangle 12.png" alt="">
                         </div>
@@ -254,7 +271,7 @@
                                 understand the possible ramifications of seemingly innocent actions on social media."
                             </p>
                         </div>
-                    </article>
+                    </article> -->
                 </div>
                 <div class="navigators">
                     <div class="swiper-button-next"></div>
