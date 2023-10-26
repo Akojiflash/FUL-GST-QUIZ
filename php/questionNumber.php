@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION['totalNumberOfQuestions'] = 5;
+$_SESSION['totalNumberOfQuestions'] = 30;
 
 // echo $NumberOfQuestions;
 
@@ -9,7 +9,7 @@ if(!isset($_SESSION['questionStat']['questionStat'] )){
 }
 
 // if(isset($_SESSION["'questionStat"]['questionStat'])){
-    if($_SESSION['questionStat']['questionStat']  >= $_SESSION['totalNumberOfQuestions']-1){
+    if($_SESSION['questionStat']['questionStat']  > $_SESSION['totalNumberOfQuestions']-1){
         
         // echo $_SESSION['questionStat']['questionStat'];
         

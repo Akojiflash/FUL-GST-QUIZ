@@ -15,7 +15,7 @@ let presentCount = 0;
 
 let currentCount = 0;
 
-//Number of questions to answer
+//Checks if you have finished the stipulated number of question
 function quizStatistic(){
     let xhr = new XMLHttpRequest();
 
