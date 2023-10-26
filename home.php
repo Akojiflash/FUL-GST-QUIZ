@@ -128,7 +128,7 @@
                             <h3>Damola Isreal</h3>
                             <p class="department">Bio Technology (100 Level)</p>
                             <p>
-                            "Your GST quiz site was an absolute lifesaver as I prepared for
+                            "Your GST quiz site has been an absolute lifesaver as I prepared for
                              my GST exams. The quizzes provided an excellent opportunity to
                               review and reinforce my understanding of GST concepts. It was an
                                essential part of my study routine, Thanks to your site, I fell confident and well-prepared!"
@@ -143,7 +143,7 @@
                             <h3>Ruth Opeyemi</h3>
                             <p class="department">Bio Chemistry (200 Level)</p>
                             <p>
-                            "Your GST quiz site was a game-changer in my exam preparation. 
+                            "The GST quiz site has been game-changer in my exam preparation. 
                             The quizzes were not only challenging but also highly educational. 
                             The quizzes were an excellent way to self-assess and ensure 
                             I was on track for my upcoming GST exams.
@@ -177,14 +177,9 @@
                             <p>
                             "Preparing for my GST exams has been much more manageable 
                             with your quiz site. The diversity of topics and the clear 
-                            explanations have made it a go-to study tool. The questions are thought-provoking 
-                            and have deepened my understanding of GST concepts,  Your site has made a significant
+                            explanations have made it a go-to study tool. The questions
+                             have deepened my understanding of GST concepts,  Your site has made a significant
                             difference in my exam readiness."
-
-                            <!-- "Your GST quiz site has been a lifeline as I prepare for my upcoming exams. 
-                            The questions are thought-provoking and have deepened my understanding of GST concepts. 
-                            Your site has made a significant 
-                            difference in my exam readiness, and I'm thankful for that." -->
                             </p>
                         </div>
                     </article>
@@ -225,12 +220,18 @@
                         <div class="Testimonies-article_text-container">
                             <h3>Joseph Olarewaju Destiny</h3>
                             <p class="department">Computer Science Education</p>
-                            <p>
-                                I went to the New Friends list on the app and saw something I wasn't prepared for:
-                                @anal.a*********
-                                I learned that you don't know what you don't know. Your outstanding kid might not fully
-                                understand the possible ramifications of seemingly innocent actions on social media."
-                            </p>
+                            <div>
+                                <div class= "role">
+                                    <p><em>Project Lead, UI/UX Designer, Backend Developer <br> Skills</em> </p>
+                                </div>
+                                <div >
+                                    <p>
+                                        Joseph has a year of experience in 
+                                        UI/UX design and is spearheading the 
+                                        backend development with several months of hands-on experience.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </article>
                     <article class="row swiper-slide">
@@ -240,12 +241,17 @@
                         <div class="Testimonies-article_text-container">
                             <h3>Akele Dolly_Pee</h3>
                             <p class="department">Computer Science Education</p>
-                            <p>
-                                I went to the New Friends list on the app and saw something I wasn't prepared for:
-                                @anal.a*********
-                                I learned that you don't know what you don't know. Your outstanding kid might not fully
-                                understand the possible ramifications of seemingly innocent actions on social media."
-                            </p>
+                            <div>
+                                <div class= "role">
+                                    <p><em>Frontend Developer Skills, Social Media <br> Manager</em></p>
+                                </div>
+                                <div>
+                                    <p>
+                                        Dolly_Pee is an experienced frontend developer with a proficiency in HTML, CSS,
+                                        and JavaScript. With two years of hands-on experience.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </article>
                     <article class="row swiper-slide">
@@ -255,12 +261,15 @@
                         <div class="Testimonies-article_text-container">
                             <h3>Ameh David</h3>
                             <p class="department">Computer Science Education</p>
-                            <p>
-                                I went to the New Friends list on the app and saw something I wasn't prepared for:
-                                @anal.a*********
-                                I learned that you don't know what you don't know. Your outstanding kid might not fully
-                                understand the possible ramifications of seemingly innocent actions on social media."
-                            </p>
+                            <div>
+                                <div class= "role">
+                                    <p><em>App Developer</em></p>
+                                </div>
+                                <div>
+                                    <p>David is responsible for designing and coding functional software programs and
+                                        the application for androids and IOS with one year <br> experience</p>
+                                </div>
+                            </div>
                         </div>
                     </article>
                     <!-- <article class="row swiper-slide">

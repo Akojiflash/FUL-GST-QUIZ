@@ -261,6 +261,10 @@ figure figcaption p {
     overflow: hidden;
 }
 
+.role{
+    margin-bottom: .5rem;
+}
+
 p {
     font-size: 14px;
 }
