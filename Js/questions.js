@@ -170,6 +170,9 @@ function ClickedAns(event) {
                     console.log(xhr.responseText);
                     sqlData = JSON.parse(xhr.responseText);
                     // Update the UI with the new question data
+                    if (sqlData['questionStat'] > numberOfQuestions-1) {
+                        location.href = "./winner";
+                    }
                     question.textContent = sqlData['question'];
                     option_a.textContent = sqlData['option_a'];
                     option_b.textContent = sqlData['option_b'];
@@ -187,8 +190,9 @@ function ClickedAns(event) {
                         displayedScore.textContent = "000"
                     }
 
-
-
+                    console.log(sqlData['questionStat']);
+                    console.log(numberOfQuestions-1);
+                   
                     // console.log(sqlData['questionID'].lastIndexOf(sqlData['id']) + 1);
                     currenQuestionNumber.textContent = sqlData["questionStat"] + 1;
                     presentCount = sqlData["questionStat"] - 1;
@@ -237,7 +241,9 @@ function questionGenerator() {
                 // let option = answer.querySelector(clickedItem);
                 // let optionContent = option.querySelector("p");
                 // userAns = optionContent.textContent;
-
+                if (sqlData['questionStat'] > numberOfQuestions-1) {
+                    location.href = "./winner";
+                }
                 optionAimage.src = "";
                 optionBimage.src = "";
                 optionCimage.src = "";
@@ -260,17 +266,15 @@ function questionGenerator() {
                     displayedScore.textContent = "000"
                 }
 
-
+                
                 // console.log(sqlData['questionID'].lastIndexOf(sqlData['id']) + 1);
                 currenQuestionNumber.textContent = sqlData["questionStat"] + 1;
                 presentCount = sqlData["questionStat"] - 1;
                 currentCount = sqlData["questionStat"] - 1;
-                console.log(presentCount);
+             
 
                 
-                if (sqlData['questionStat'] >= numberOfQuestions) {
-                    location.href = "./winner";
-                }
+               
 
             } else {
                 back();
@@ -372,7 +376,7 @@ function back() {
 
                 currenQuestionNumber.textContent = prevsqlData["QuestionNo"] + 1;
 
-                console.log(prevsqlData["questionStat"]);
+      
 
                 
             } else {

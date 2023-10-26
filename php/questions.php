@@ -69,6 +69,7 @@ if (!isset($_SESSION['AllQuestions'])) {
 if(!isset($_SESSION['quize_completed']) && count($_SESSION['AllQuestions']['AllQuestions']) >30){
     
         $_SESSION['quize_completed'] = true;
+        $QuestionStat = ['stat' => $_SESSION['quize_completed'] ];
     echo $_SESSION['quize_completed'];
 }
 
@@ -230,8 +231,9 @@ function QuestionOutPut()
             //     $_SESSION['row2'] = array_merge($_SESSION['row2'], $prevQuestNo);
             // }
             if (isset($_SESSION['AllQuestions'])) {
-
+                // global $QuestionStat;
                 $_SESSION['row2'] = array_merge($_SESSION['row2'], $_SESSION['AllQuestions']);
+                // $_SESSION['row2'] = array_merge($_SESSION['row2'], $QuestionStat);
             }
             if (isset($_SESSION['trials'])) {
 
