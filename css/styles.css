@@ -236,12 +236,13 @@ figure figcaption p {
     position: relative;
 }
 
-.Students-testimonies__img-container {
+.Students-testimonies__img-container{
     width: 80px;
     aspect-ratio: 1/1;
     border-radius: 200px;
     line-height: none;
-    margin-bottom: 1.375rem;
+    margin-bottom: 1.325rem;
+    overflow: hidden;
 }
 
 p {
