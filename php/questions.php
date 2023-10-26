@@ -1,5 +1,6 @@
 <?php
 include_once "config.php";
+// include "questionNumber.php";
 
 session_start();
 // Initialize or assign default values to session variables
@@ -66,7 +67,7 @@ if (!isset($_SESSION['AllQuestions'])) {
 }
 
 //Check if user has completed the quiz
-if(!isset($_SESSION['quize_completed']) && count($_SESSION['AllQuestions']['AllQuestions']) >30){
+if(!isset($_SESSION['quize_completed']) && count($_SESSION['AllQuestions']['AllQuestions']) >$_SESSION['totalNumberOfQuestions']){
     
         $_SESSION['quize_completed'] = true;
         $QuestionStat = ['stat' => $_SESSION['quize_completed'] ];
