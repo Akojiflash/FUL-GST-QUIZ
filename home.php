@@ -304,16 +304,17 @@
             <h2>Get in touch</h2>
             <div class="row contact__wrapper">
                 <div class="form-wrapper">
-                    <form action="" class="row">
+                    <form action="https://formspree.io/f/xleyzzrv" method="POST" class="row">
+                        
                         <div class="contact-input__container">
-                            <input class="contact-input" type="text" placeholder="Your Name*" required>
-                            <input class="contact-input" type="email" placeholder="Your email*">
-                            <input class="contact-input" type="text" placeholder="Phone Number*">
-                            <input class="contact-input" type="text" placeholder="Subject*">
+                            <input class="contact-input" type="text" placeholder="Your Name*" name = "user-name" required>
+                            <input id = "user-email" class="contact-input" type="email" placeholder="Your email*" name = "user-email">
+                            <input class="contact-input" type="text" placeholder="Phone Number*" name ="user-number">
+                            <input class="contact-input" type="text" placeholder="Subject*" name = "subject">
                         </div>
                         <div class="contact-textarea__container">
                             <div>
-                                <textarea name="" id="" cols="30" rows="11.2" placeholder="Message*"></textarea>
+                                <textarea name="message" id="" cols="30" rows="11.2" placeholder="Message*"></textarea>
                             </div>
                             <div>
                                 <input class="contact-submit__btn" type="submit" value="Submit">
@@ -386,7 +387,26 @@
         });
     </script>
     
+    
     <script src="Js/landingpage-nav.js"></script>
+
+
+    <!-- <script src="https://smtpjs.com/v3/smtp.js"></script> -->
+    <!-- <script>
+        function sendEmail(){
+            Email.send({
+            Host : "smtp.elasticemail.com",
+            Username : "precimyte1122@gmail.com",
+            Password : "2B8F12236344DBDA8E190F46A3B5DBBF1472C800D9CBE9911A9EF69E64D0F2FC77154C761F7FC9BE029484983E1BF712",
+            To : 'precimyte1122@gmail.com',
+            From : document.getElementById("user-email").value,
+            Subject : "New contact form enquiry",
+            Body : "And this is the body"
+        }).then(
+        message => alert(message)
+);
+        }
+    </script> -->
 </body>
 
 </html>

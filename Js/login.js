@@ -2,6 +2,7 @@ const form = document.querySelector("#log-in");
 let loginBtn = form.querySelector("#submit-btn");
 const errorMsg = document.querySelector(".incorrect-password");
 let errorText = errorMsg.querySelector("p");
+let email = 
 
 form.onsubmit = (e)=>{
     e.preventDefault();

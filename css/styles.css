@@ -75,11 +75,11 @@ header {
     font-size: 3.3125rem;
 }
 
+/* EXCEL UNDERLINE STYLING */
+
 .excel{
     position: relative;
 }
-
-/* EXCEL UNDERLINE STYLING */
 
 .excel::after{
     position: absolute;
