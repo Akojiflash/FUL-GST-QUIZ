@@ -213,9 +213,10 @@
             <h2>Developers</h2>
             <div class="swiper mySwiper">
                 <div class="Testimonies-article__wrapper swiper-wrapper">
+                    <!-- DESTINY'S CONTAINER FOR DEVELOPERS INFORMATION -->
                     <article class="row swiper-slide">
                         <div class="Students-testimonies__img-container">
-                            <img class="Students-testimonies__img" src="images/Rectangle 12.png" alt="">
+                            <img class="Students-testimonies__img" src="images/Amarecari1.png" alt="">
                         </div>
                         <div class="Testimonies-article_text-container">
                             <h3>Joseph Olarewaju Destiny</h3>
@@ -234,9 +235,10 @@
                             </div>
                         </div>
                     </article>
+                    <!-- DOLLY PEE'S CONTAINER FOR DEVELOPERS INFORMATION -->
                     <article class="row swiper-slide">
                         <div class="Students-testimonies__img-container">
-                            <img class="Students-testimonies__img" src="images/Rectangle 12.png" alt="">
+                            <img class="Students-testimonies__img" src="images/DollyPee.jpeg" alt="">
                         </div>
                         <div class="Testimonies-article_text-container">
                             <h3>Akele Dolly_Pee</h3>
@@ -256,7 +258,7 @@
                     </article>
                     <article class="row swiper-slide">
                         <div class="Students-testimonies__img-container">
-                            <img class="Students-testimonies__img" src="images/Rectangle 12.png" alt="">
+                            <img class="Students-testimonies__img" src="images/Davee.jpeg" alt="">      
                         </div>
                         <div class="Testimonies-article_text-container">
                             <h3>Ameh David</h3>
@@ -266,8 +268,8 @@
                                     <p><em>App Developer</em></p>
                                 </div>
                                 <div>
-                                    <p>David is responsible for designing and coding functional software programs and
-                                        the application for androids and IOS with one year <br> experience</p>
+                                    <p>David is responsible for designing and coding functional <br> software programs and
+                                        the application for <br>  androids and IOS with one year <br> experience</p>
                                 </div>
                             </div>
                         </div>
