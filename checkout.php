@@ -1,9 +1,12 @@
 <?php
+$locationStat = "http://localhost/GstQuizSite/";
+
 include_once("php/config.php");
 session_start();
 if (!isset($_SESSION["paymentId"])) {
     $_SESSION['paymentId'] = uniqid() . bin2hex(random_bytes(8));;
 }
+
 
 $paymentId = $_SESSION['paymentId'];
 
@@ -20,12 +23,12 @@ $data = [
     "amount" => $_SESSION['amount'],
     "customer" => [
         "email" => $_SESSION['email'],
-        "phonenumber" => $_SESSION["phone"],
+        "phonenumber" => "{$_SESSION["phone"]}",
         "name" => $_SESSION["name"]
     ],
     "customizations" => [
         "title" => "Course Payment",
-        "logo"  => "http://localhost/GstQuizSite/images/gstlogo.png",
+        "logo"  => $locationStat . "images/gstlogo.png",
         "description" => "Checkout page for payment of your selected Courses on the GSTQuiz website",
 
 
@@ -35,7 +38,7 @@ $data = [
         "reason" => "Product purchase",
         "address"  => "Federal University Lokoja Kogi state, Adankolo, Kogi state, Nigeria"
     ],
-    "redirect_url" => "http://localhost/GstQuizSite/payment",
+    "redirect_url" => $locationStat . "verify",
     "products" => $_SESSION['selectedCourses'],
     "user_id" =>  $_SESSION['unique_id']
 ];
@@ -71,8 +74,8 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, [
 $request = curl_exec($ch);
 
 $result = json_decode($request);
-
-//redkrect to payment link
+print_r($result);
+//redirect to payment link
 header("location: " . $result ->data->link );
 // var_dump($result);
 // close cURL session
