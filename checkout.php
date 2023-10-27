@@ -35,7 +35,7 @@ $data = [
         "reason" => "Product purchase",
         "address"  => "Federal University Lokoja Kogi state, Adankolo, Kogi state, Nigeria"
     ],
-    "redirect_url" => "http://localhost/GstQuizSite/verify",
+    "redirect_url" => "http://localhost/GstQuizSite/payment",
     "products" => $_SESSION['selectedCourses'],
     "user_id" =>  $_SESSION['unique_id']
 ];
