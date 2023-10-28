@@ -73,6 +73,7 @@ if (!empty($fname) && !empty($lname) && !empty($email) && !empty($department) &&
                     $_SESSION['email'] = $row['email'];
                     $_SESSION['phone'] = $row['phone_number'];
                     $_SESSION['name'] = $row['fname'] . " " . $row['lname'];
+                    $_SESSION['matric_no'] = $row['matric_number'];
                     if (!isset($_SESSION['trials'])) {
                         $_SESSION['trials'] = $row['trials'];
                     }

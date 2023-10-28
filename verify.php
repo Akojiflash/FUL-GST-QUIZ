@@ -1,4 +1,6 @@
 <?php 
+include_once("./php/config.php");
+session_start();
 $errorlocation = "location: http://localhost/GstQuizSite/payment";
 
 
@@ -27,7 +29,7 @@ if(isset($_GET["status"]) && isset($_GET["transaction_id"]) && isset($_GET['tx_r
 
     //Set the API headers
     curl_setopt($curl, CURLOPT_HTTPHEADER, [
-        "Authorization: Bearer FLWSECK_TEST-4d194c4dd74aa92509e651ea83473746-X",
+        "Authorization: Bearer FLWSECK-d10d244f8866d0f2f9a7ae7e08b5efe1-18b7394dccevt-X",
         "Content-Type: Application/json"
     ]);
 
@@ -42,7 +44,7 @@ if(isset($_GET["status"]) && isset($_GET["transaction_id"]) && isset($_GET['tx_r
 
     }
 
-    echo "<pre>" . trim($run) . "</pre>";
+
     //Covert to json object
     $result = json_decode($run);
 
@@ -55,8 +57,19 @@ if(isset($_GET["status"]) && isset($_GET["transaction_id"]) && isset($_GET['tx_r
     $fullName = $result -> data->customer->name;
 
     if($status != "successful" || ($trans_id != $id) ){
-        header($errorlocation . "Not paid due to some errors");
-        
+        header($errorlocation . "?error=error");
+        exit;
+
+    }else{
+        for( $i = 0; $i < count($_SESSION['selectedCourses']); $i++ ){
+       $query = "INSERT INTO payment_table ( unique_id, course_id, paid, transaction_id,  matric_no, name, reference) VALUES
+       ('{$_SESSION['unique_id']}', '{$_SESSION['selectedCourses'][$i]}', 1, '{$trans_id}', '{$_SESSION['matric_no']}', '{$_SESSION['name']}', '{$reference}' )";
+        $result = mysqli_query($conn, $query);
+        }
+        if($result){
+            header($errorlocation . "?status=success");
+        }
+
 
     }
 
@@ -67,7 +80,7 @@ if(isset($_GET["status"]) && isset($_GET["transaction_id"]) && isset($_GET['tx_r
     }else if($_GET["status"] == "cancelled"){
         header($errorlocation);
     }
-    
+    curl_close($curl);
 
 }else if(!isset($_GET["transaction_id"])) {
     header($errorlocation);

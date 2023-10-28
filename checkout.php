@@ -65,7 +65,7 @@ curl_setopt($ch, CURLOPT_TIMEOUT, 200);
 
 //set the headers from endpoint
 curl_setopt($ch, CURLOPT_HTTPHEADER, [
-    'Authorization: Bearer FLWSECK_TEST-4d194c4dd74aa92509e651ea83473746-X',
+    'Authorization: Bearer FLWSECK-d10d244f8866d0f2f9a7ae7e08b5efe1-18b7394dccevt-X',
     "Content-Type: Application/json",
     "Cache-Control: no-cache"
 ]);

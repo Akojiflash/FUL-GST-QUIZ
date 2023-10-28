@@ -29,6 +29,7 @@ if (!empty($email) && !empty($password)) {
                 $_SESSION['email'] = $row['email'];
                 $_SESSION['phone'] = $row['phone_number'];
                 $_SESSION['name'] = $row['fname'] . " " . $row['lname'];
+                $_SESSION['matric_no'] = $row['matric_number'];
             }
             
             echo "success";
