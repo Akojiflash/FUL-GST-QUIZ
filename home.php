@@ -391,8 +391,8 @@
     <script src="Js/landingpage-nav.js"></script>
 
 
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-   <script>
+    <!-- <script src="https://smtpjs.com/v3/smtp.js"></script> -->
+   <!-- <script>
         function sendEmail(){
             Email.send({
             Host : "smtp.elasticemail.com",
@@ -406,7 +406,7 @@
         message => alert(message)
 );
         }
-    </script>
+    </script> -->
 </body>
 
 </html>

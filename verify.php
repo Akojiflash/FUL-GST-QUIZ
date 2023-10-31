@@ -5,36 +5,38 @@ $errorlocation = "location: http://localhost/GstQuizSite/payment";
 
 
 
-if(isset($_GET["status"]) && isset($_GET["transaction_id"]) && isset($_GET['tx_ref'])){
-    if($_GET["status"] == "successful"){
-    $trans_id = htmlspecialchars($_GET["transaction_id"]);
-    $trans_status = htmlspecialchars($_GET["status"]);
-    $trans_ref = htmlspecialchars($_GET["tx_ref"]);
+if (isset($_GET["reference"]) && isset($_GET["trxref"])) {
+    echo "success";
+        $trans_ref = htmlspecialchars($_GET["trxref"]);
 
-    //verify Endpoint
-    $url = "https://api.flutterwave.com/v3/transactions/" . $trans_id. "/verify";
+//         // Verify the payment with Paystack
+        $paystack_secret_key = "sk_test_3940fc65f607b2f17bc07e0a83b6741f0894c625"; // Replace with your Paystack secret key
+        $ref = $_GET['reference'];
 
+//         // Create cURL session
+        $url = "https://api.paystack.co/transaction/verify/" . $trans_ref;
+    
 
     //Create cURL session
 
     $curl = curl_init($url);
 
-    //Turn off SSL checker
+//     //Turn off SSL checker
     curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0); 
     
-    //Decide the request that you want 
+//     //Decide the request that you want 
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true); 
 
     curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "GET"); 
 
-    //Set the API headers
+//     //Set the API headers
     curl_setopt($curl, CURLOPT_HTTPHEADER, [
-        "Authorization: Bearer FLWSECK-d10d244f8866d0f2f9a7ae7e08b5efe1-18b7394dccevt-X",
+        "Authorization: Bearer " . $paystack_secret_key,
         "Content-Type: Application/json"
     ]);
 
 
-    //Run cURL 
+//     //Run cURL 
     $run = curl_exec($curl);
     //Check for errors 
     $error = curl_error($curl);
@@ -45,25 +47,25 @@ if(isset($_GET["status"]) && isset($_GET["transaction_id"]) && isset($_GET['tx_r
     }
 
 
-    //Covert to json object
+//     //Covert to json object
     $result = json_decode($run);
-
+// print_r($result);
     $status = $result->data->status;
     $message = $result -> message;
     $id = $result -> data -> id;
 
-    $reference = $result -> data->tx_ref;
+    $reference = $result -> data->reference;
     $amount = $result -> data->amount;
-    $fullName = $result -> data->customer->name;
+    $fullName = $result -> data->customer->first_name;
 
-    if($status != "successful" || ($trans_id != $id) ){
+    if($status != "success"){
         header($errorlocation . "?error=error");
         exit;
 
     }else{
         for( $i = 0; $i < count($_SESSION['selectedCourses']); $i++ ){
        $query = "INSERT INTO payment_table ( unique_id, course_id, paid, transaction_id,  matric_no, name, reference) VALUES
-       ('{$_SESSION['unique_id']}', '{$_SESSION['selectedCourses'][$i]}', 1, '{$trans_id}', '{$_SESSION['matric_no']}', '{$_SESSION['name']}', '{$reference}' )";
+       ('{$_SESSION['unique_id']}', '{$_SESSION['selectedCourses'][$i]}', 1, '{$id}', '{$_SESSION['matric_no']}', '{$_SESSION['name']}', '{$reference}' )";
         $result = mysqli_query($conn, $query);
         }
         if($result){
@@ -77,11 +79,9 @@ if(isset($_GET["status"]) && isset($_GET["transaction_id"]) && isset($_GET['tx_r
 
 
 
-    }else if($_GET["status"] == "cancelled"){
-        header($errorlocation);
     }
     curl_close($curl);
 
-}else if(!isset($_GET["transaction_id"])) {
+if(!isset($_GET["transaction_id"])) {
     header($errorlocation);
 }
