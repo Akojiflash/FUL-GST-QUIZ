@@ -10,7 +10,7 @@ if (isset($_GET["reference"]) && isset($_GET["trxref"])) {
         $trans_ref = htmlspecialchars($_GET["trxref"]);
 
 //         // Verify the payment with Paystack
-        $paystack_secret_key = "sk_test_3940fc65f607b2f17bc07e0a83b6741f0894c625"; // Replace with your Paystack secret key
+        $paystack_secret_key = "sk_live_37a3731efdb70c1b27e9edd76cceba68d1544519"; // Replace with your Paystack secret key
         $ref = $_GET['reference'];
 
 //         // Create cURL session

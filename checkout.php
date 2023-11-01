@@ -10,7 +10,7 @@ if (!isset($_SESSION["paymentId"])) {
 
 $paymentId = $_SESSION['paymentId'];
 
-$paystack_secret_key = "sk_test_3940fc65f607b2f17bc07e0a83b6741f0894c625"; // Replace with your Paystack secret key
+$paystack_secret_key = "sk_live_37a3731efdb70c1b27e9edd76cceba68d1544519"; // Replace with your Paystack secret key
 
 $data = [
     "reference" => $paymentId,
