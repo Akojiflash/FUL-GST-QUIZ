@@ -5,8 +5,8 @@ include_once "config.php";
 $level;
 $fname = mysqli_real_escape_string($conn, $_POST['fname']);
 $lname = mysqli_real_escape_string($conn, $_POST['lname']);
-$email = mysqli_real_escape_string($conn, $_POST['email']);
-$matric = mysqli_real_escape_string($conn, $_POST['matric']);
+$email = strtolower(trim(mysqli_real_escape_string($conn, $_POST['email'])));
+$matric = trim(mysqli_real_escape_string($conn, $_POST['matric']));
 $department = mysqli_real_escape_string($conn, $_POST['department']);
 $phone = mysqli_real_escape_string($conn, $_POST['phone']);
 if (array_key_exists('level', $_POST)) {

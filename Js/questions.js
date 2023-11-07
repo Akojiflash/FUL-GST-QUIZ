@@ -10,7 +10,7 @@ let frwdBtn = document.querySelector('#forward');
 let course_code = document.querySelector(".selected_course");
 let currenQuestionNumber = document.querySelector(".current-question_number");
 let displayedScore = document.querySelector(".Points span")
-
+let quizStat = 0;
 let presentCount = 0;
 
 let currentCount = 0;
@@ -25,9 +25,9 @@ xhr.onload = () => {
     if(xhr.readyState === XMLHttpRequest.DONE){
         if(xhr.status === 200) {
             
-            let quizStat = xhr.responseText;
+            quizStat = xhr.responseText;
             
-            console.log("Apear here:"+quizStat);
+            
             if ( quizStat == "completed") {
                 location.href = "./winner";
             }
@@ -163,7 +163,7 @@ function ClickedAns(event) {
     event.stopPropagation();
 
     setTimeout(() => {
-       
+        quizStatistic();
         answer.addEventListener("click", ClickedAns, false)
 
         let xhr = new XMLHttpRequest();
@@ -205,7 +205,7 @@ function ClickedAns(event) {
                     optionBimage.src = "";
                     optionCimage.src = "";
                     optionDimage.src = "";
-                    quizStatistic();
+                    
                   
                 } else {
                     console.error('Error:', xhr.status, xhr.statusText);

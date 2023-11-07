@@ -79,6 +79,7 @@ input {
     box-shadow: var(--box-shadow);
     outline: none;
     border: none;
+    cursor: pointer;
 }
 .password-input{
     position: relative;
@@ -115,9 +116,11 @@ input {
 }
 .discard_changes-btn{
     background: var(--Grey-color);
+    cursor: pointer;
 }
 .save_changes-btn{
     background: var(--Orange-color);
+    cursor: pointer;
 }
 
 @media (max-width: 600px) {
