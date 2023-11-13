@@ -274,21 +274,6 @@
                             </div>
                         </div>
                     </article>
-                    <!-- <article class="row swiper-slide">
-                        <div class="Students-testimonies__img-container">
-                            <img class="Students-testimonies__img" src="images/Rectangle 12.png" alt="">
-                        </div>
-                        <div class="Testimonies-article_text-container">
-                            <h3>John Smith</h3>
-                            <p class="department">Bio Chemistry 100 Level</p>
-                            <p>
-                                I went to the New Friends list on the app and saw something I wasn't prepared for:
-                                @anal.a*********
-                                I learned that you don't know what you don't know. Your outstanding kid might not fully
-                                understand the possible ramifications of seemingly innocent actions on social media."
-                            </p>
-                        </div>
-                    </article> -->
                 </div>
                 <div class="navigators">
                     <div class="swiper-button-next"></div>
@@ -389,24 +374,6 @@
     
     
     <script src="Js/landingpage-nav.js"></script>
-
-
-    <!-- <script src="https://smtpjs.com/v3/smtp.js"></script> -->
-    <!-- <script>
-        function sendEmail(){
-            Email.send({
-            Host : "smtp.elasticemail.com",
-            Username : "precimyte1122@gmail.com",
-            Password : "2B8F12236344DBDA8E190F46A3B5DBBF1472C800D9CBE9911A9EF69E64D0F2FC77154C761F7FC9BE029484983E1BF712",
-            To : 'precimyte1122@gmail.com',
-            From : document.getElementById("user-email").value,
-            Subject : "New contact form enquiry",
-            Body : "And this is the body"
-        }).then(
-        message => alert(message)
-);
-        }
-    </script> -->
 </body>
 
 </html>
