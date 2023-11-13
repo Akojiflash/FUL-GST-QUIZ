@@ -61,7 +61,7 @@
 
                 </div>
                 <div>
-                    <img loading="lazy" class="text-side-bold-circle" src="images/pngwing.com (2).png" alt="">
+                    <img loading="lazy" class="text-side-bold-circle" src="images/pngwing.com _2_.png" alt="">
                 </div>
             </div>
             <div class="col col-2">
@@ -71,7 +71,7 @@
                     <img src="images/Group_130.png" alt="">
                 </picture>
 
-                <img loading="lazy" class="under-phone-bold-circle" src="images/pngwing.com (2).png" alt="">
+                <img loading="lazy" class="under-phone-bold-circle" src="images/pngwing.com _2_.png" alt="">
                 <img class="background__design ellipse__2" src="images/Ellipse 8.png" alt="">
                 <img class="background__design ellipse__3" src="images/Ellipse 10.png" alt="">
                 <img loading="lazy" class="background__design ellipse__4" src="images/Ellipse 11.png" alt="">
