@@ -77,12 +77,35 @@ if (!empty($fname) && !empty($lname) && !empty($email) && !empty($department) &&
                     if (!isset($_SESSION['trials'])) {
                         $_SESSION['trials'] = $row['trials'];
                     }
-                    session_regenerate_id();
-                    $user_session_id = session_id();
-                    $query4 = "UPDATE users SET user_session_id = '{$user_session_id}' WHERE unique_id = '{$row['unique_id']}' ";
+                    if(!empty($_SERVER['HTTP_CLIENT_IP'])){
+
+                        $ip_address = $_SERVER['HTTP_CLIENT_IP'];
+                    
+                    
+                    }
+                    
+                    //whether ip is from proxy
+                    elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
+                    
+                    
+                        $ip_address = $_SERVER['HTTP_X_FORWARDED_FOR'];
+                    
+                    }
+                    //Whether ip is from remote address
+                    
+                    else{
+                    
+                        # code ....
+                        $ip_address = $_SERVER['REMOTE_ADDR'];
+                    }
+                    
+                 
+                    
+                    
+                    $query4 = "UPDATE users SET ip_address = '{$ip_address}' WHERE unique_id = '{$row['unique_id']}' ";
                     $sql4 = mysqli_query($conn, $query4);
-                    if ($sql4 && !isset($_SESSION['user_session_id'])) {
-                        $_SESSION['user_session_id'] =  $user_session_id;
+                    if ($sql4 && !isset($_SESSION['ip_address'])) {
+                        $_SESSION['ip_address'] =  $ip_address;
                     }
                    
                 }
