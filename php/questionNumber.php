@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION['totalNumberOfQuestions'] = 30;
+$_SESSION['totalNumberOfQuestions'] = 29;
 
 // echo $NumberOfQuestions;
 

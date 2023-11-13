@@ -374,6 +374,27 @@
     
     
     <script src="Js/landingpage-nav.js"></script>
+<<<<<<< HEAD
+=======
+
+
+    <!-- <script src="https://smtpjs.com/v3/smtp.js"></script> -->
+   <!-- <script>
+        function sendEmail(){
+            Email.send({
+            Host : "smtp.elasticemail.com",
+            Username : "precimyte1122@gmail.com",
+            Password : "2B8F12236344DBDA8E190F46A3B5DBBF1472C800D9CBE9911A9EF69E64D0F2FC77154C761F7FC9BE029484983E1BF712",
+            To : 'unihive@fulgstquiz.com',
+            From : document.getElementById("user-email").value,
+            Subject : "New contact form enquiry",
+            Body : "And this is the body"
+        }).then(
+        message => alert(message)
+);
+        }
+    </script> -->
+>>>>>>> cfc150b2308f73b3a89a1021832312fa64d0af98
 </body>
 
 </html>
