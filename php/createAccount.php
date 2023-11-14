@@ -77,6 +77,7 @@ if (!empty($fname) && !empty($lname) && !empty($email) && !empty($department) &&
                     if (!isset($_SESSION['trials'])) {
                         $_SESSION['trials'] = $row['trials'];
                     }
+                    //track users ip address
                     if(!empty($_SERVER['HTTP_CLIENT_IP'])){
 
                         $ip_address = $_SERVER['HTTP_CLIENT_IP'];

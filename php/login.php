@@ -20,6 +20,7 @@ if (!empty($email) && !empty($password)) {
             if(!isset($_SESSION['trials'])){
                 $_SESSION['trials'] = $row['trials']; 
             }
+            //track users ip address
             if(!empty($_SERVER['HTTP_CLIENT_IP'])){
 
                 $ip_address = $_SERVER['HTTP_CLIENT_IP'];
