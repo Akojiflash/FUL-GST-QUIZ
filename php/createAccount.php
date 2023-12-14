@@ -57,7 +57,7 @@ if (!empty($fname) && !empty($lname) && !empty($email) && !empty($department) &&
 
             // Generate random image name, unique ID, and insert user data into the database
             $random_id = rand(time(), 1000000);
-            $trial = 3;
+            $trial = 1;
             // Prepare the SQL query
             $query2 = "INSERT INTO users (unique_id, fname, lname, email, department, level, password, trials, profile_img, matric_number, phone_number) 
                 VALUES ('{$random_id}', '{$fname}', '{$lname}', '{$email}', '{$department}', '{$level}', '{$hashedPassword}','{$trial}' , '{$full_img}', '{$matric}', '{$phone}')"; // Add the closing parenthesis here

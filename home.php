@@ -4,10 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GST Quiz Application</title>
-    <link rel="stylesheet" href="css/score.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="shortcut icon" href="icons/favicon.ico" sizes="32x32" type="image/x-icon">
+    <title>FUL GST Quiz Application</title>
+    <!-- SEO Meta Tags -->
+     <meta name="description" content="This is a GST Quiz Application for learning and testing your knowledge of GST.">
+    <meta name="keywords" content="GST, Quiz, fulgst, Learning, gstquiz, fulquiz, fulokojaquiz, ful quiz, FUL GST, FUL GST QUIZ, ful gst app">
+    <meta name="author" content="Fulgstquiz">
+    <meta name="robots" content="all">
+    
+    <!-- Open Graph Meta Tags (for social media sharing) -->
+    <meta property="og:description" content="This is a GST Quiz Application for learning and testing your knowledge of GST and other cbt courses.">
+    <meta property="og:image" content="images/gstlogo.jpg">
+  
+    <meta name="twitter:description" content="This is a GST Quiz Application for learning and testing your knowledge of GST.">
+    <meta name="twitter:image" content="images/gstlogo.jpg">
+
+    <!-- Twitter Meta Tags -->
+<meta name="twitter:title" content="GST Quiz | FUL GST | FUL Quizzes">
+<meta name="twitter:description" content="This is a GST Quiz Application for learning and testing your knowledge of GST and other cbt courses.">
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="GST Quiz | FUL GST | FUL Quizzes">
+<meta property="og:description" content="This is a GST Quiz Application for learning and testing your knowledge of GST and other cbt courses.">
+
+
+
+ <!-- Canonical Link Tag -->
+    <link rel="canonical" href="https://fulgstquiz.com/">
+
+    <link rel="stylesheet" href="https://fulgstquiz.com/css/score.css">
+    <link rel="stylesheet" href="https://fulgstquiz.com/css/styles.css">
+    <link rel="shortcut icon" href="https://fulgstquiz.com/icons/favicon.ico" sizes="32x32" type="image/x-icon">
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 </head>
@@ -18,7 +44,7 @@
         <nav class="container row main-nav home-page_nav">
             <div class="gst-logo_container">
                 <a href="home">
-                    <img src="icons/Logo.svg" alt="">
+                    <img src="icons/Logo.svg" alt="fulgst">
                 </a>
             </div>
 
@@ -32,7 +58,7 @@
                         <a href="index#contact-us">Contact Us</a>
                     </li>
                     <li class="log-in nav-link">
-                        <a href="login">Log In</a>
+                        <a href="logIn">Log In</a>
                     </li>
                     <li class="register nav-link">
                         <a href="createAccount">Register</a>
@@ -49,25 +75,25 @@
                 <div class="welcome-text__container">
                     <h1 class="welcome-text"><span class="excel">Excel</span> In Your <br> GST CBT Exams</h1>
                     <a class="createAccount-link" href="createAccount">
-                        <img loading="lazy" class="background__design grouped__angles2" src="images/Group 90.png"
+                        <img loading="lazy" class="background__design grouped__angles2" src="https://fulgstquiz.com/images/Group 90.png"
                             alt="">
                         <button class="get-started__btn">Get Started</button>
-                        <img loading="lazy" class="background__design grouped__angles1" src="images/Group 89.png"
+                        <img loading="lazy" class="background__design grouped__angles1" src="https://fulgstquiz.com/images/Group 89.png"
                             alt="">
 
-                        <img loading="lazy" class="background__design ellipse__1" src="images/Ellipse 11.png" alt="">
+                        <img loading="lazy" class="background__design ellipse__1" src="https://fulgstquiz.com/images/Ellipse 11.png" alt="">
                     </a>
 
 
                 </div>
                 <div>
-                    <img loading="lazy" class="text-side-bold-circle" src="images/pngwing.com _2_.png" alt="">
+                    <img loading="lazy" class="text-side-bold-circle" src="https://fulgstquiz.com/images/pngwing.com _2_.png" alt="">
                 </div>
             </div>
             <div class="col col-2">
 
                 <picture>
-                    <source media="(min-width:600px)" srcset="images/Group_110.png">
+                    <source media="(min-width:600px)" srcset="https://fulgstquiz.com/images/Group_110.png">
                     <img src="images/Group_130.png" alt="">
                 </picture>
 
@@ -92,14 +118,14 @@
                     </figcaption>
                 </figure>
                 <figure>
-                    <img src="images/Group 96.png" alt="">
+                    <img src="images/Group 96.png" alt="FUL GST">
                     <figcaption>
                         <h3>Realistic Exam Experience</h3>
                         <p>Simulate the GST exam environment with timed quizzes and authentic question formats.</p>
                     </figcaption>
                 </figure>
                 <figure>
-                    <img src="images/Group 95.png" alt="">
+                    <img src="images/Group 95.png" alt="GST QUIZ">
                     <figcaption>
                         <h3>Study Anywhere</h3>
                         <p>Prepare for your GST exam on-the-go with our mobile app.</p>
@@ -274,6 +300,21 @@
                             </div>
                         </div>
                     </article>
+                    <!-- <article class="row swiper-slide">
+                        <div class="Students-testimonies__img-container">
+                            <img class="Students-testimonies__img" src="images/Rectangle 12.png" alt="">
+                        </div>
+                        <div class="Testimonies-article_text-container">
+                            <h3>John Smith</h3>
+                            <p class="department">Bio Chemistry 100 Level</p>
+                            <p>
+                                I went to the New Friends list on the app and saw something I wasn't prepared for:
+                                @anal.a*********
+                                I learned that you don't know what you don't know. Your outstanding kid might not fully
+                                understand the possible ramifications of seemingly innocent actions on social media."
+                            </p>
+                        </div>
+                    </article> -->
                 </div>
                 <div class="navigators">
                     <div class="swiper-button-next"></div>
@@ -308,13 +349,13 @@
                     </form>
                 </div>
                 <div class="social-medias">
-                    <a href="">
+                    <a href="https://chat.whatsapp.com/FunSBiu8sJCCgrtDvJH9lw">
                         <img class="social__icon" src="icons/Icons.png" alt="">
                     </a>
-                    <a href="">
+                    <a href="https://web.facebook.com/61553901291888/">
                         <img class="social__icon" src="icons/facebook-1-svgrepo-com.png" alt="">
                     </a>
-                    <a href="">
+                    <a href="https://www.linkedin.com/groups/9518105/">
                         <img class="social__icon" src="icons/linkedin-1-svgrepo-com.png" alt="">
                     </a>
                     <a href="">
@@ -374,8 +415,6 @@
     
     
     <script src="Js/landingpage-nav.js"></script>
-<<<<<<< HEAD
-=======
 
 
     <!-- <script src="https://smtpjs.com/v3/smtp.js"></script> -->
@@ -394,7 +433,6 @@
 );
         }
     </script> -->
->>>>>>> cfc150b2308f73b3a89a1021832312fa64d0af98
 </body>
 
 </html>
